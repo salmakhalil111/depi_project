@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="DEPI Automation Suite" verbose="1">
+
+    <test name="Product Browsing">
+        <classes>
+            <class name="Tests.ProductBrowsingTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Details">
+        <classes>
+            <class name="Tests.ProductDetailsTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Search">
+        <classes>
+            <class name="Tests.ProductSearchTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Filter">
+        <classes>
+            <class name="Tests.ProductFilterTests"/>
+        </classes>
+    </test>
+
+    <test name="Header Navigation (Guest + Logged-in)">
+        <classes>
+            <class name="Tests.HeaderNavigationTests"/>
+        </classes>
+    </test>
+
+</suite>
