@@ -1,0 +1,1 @@
+{"uuid":"c979bb2a-516d-4780-bbf4-3f3954b4d8f8","name":"userCanNotRegisterWithInvalidCredentials","children":["d272d0c0-a643-49ac-a95d-82403784a462"],"befores":[{"name":"getInvalidCredentialsData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1779025058651,"stop":1779025058660}],"afters":[],"start":1779025058643,"stop":1779025072988}
