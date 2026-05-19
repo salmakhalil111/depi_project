@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite1" verbose="1">
+
+    <test name="Regression on Edge Browser">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="Tests.LoginTests"/>
+        </classes>
+    </test>
+
+<!--    <test name="Regression on FireFox Browser">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <parameter name="headless" value="false"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.LoginTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Regression on Chrome Browser">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.LoginTests"/>-->
+<!--            &lt;!&ndash;            <class name="Tests.RegisterTest"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
