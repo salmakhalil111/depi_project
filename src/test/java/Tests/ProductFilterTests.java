@@ -1,12 +1,12 @@
 package Tests;
 
-import Base.BaseTest;
+import Base.BaseTestTwo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductsPage;
 
 // Feature 4: Filter products by Category or Brand
-public class ProductFilterTests extends BaseTest {
+public class ProductFilterTests extends BaseTestTwo {
 
     // TC01: Category sidebar is visible on products page
     @Test(priority = 1)

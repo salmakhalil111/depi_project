@@ -1,13 +1,13 @@
 package Tests;
 
-import Base.BaseTest;
+import Base.BaseTestTwo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductDetailsPage;
 import pages.ProductsPage;
 
 // Feature 2: Product Details (single product page)
-public class ProductDetailsTests extends BaseTest {
+public class ProductDetailsTests extends BaseTestTwo {
 
     // TC01: Product details page opens after clicking "View Product"
     @Test(priority = 1)

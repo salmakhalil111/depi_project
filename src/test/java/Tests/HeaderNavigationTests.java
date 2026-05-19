@@ -1,6 +1,6 @@
 package Tests;
 
-import Base.BaseTest;
+import Base.BaseTestTwo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -8,7 +8,7 @@ import pages.LoginPage;
 import utils.ConfigReader;
 
 // Feature 5: Header navigation (Guest vs Logged-in user)
-public class HeaderNavigationTests extends BaseTest {
+public class HeaderNavigationTests extends BaseTestTwo {
 
     // TC01: Page title contains "Automation Exercise"
     @Test(priority = 1)

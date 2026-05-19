@@ -29,10 +29,21 @@ public class DriverFactory {
 
                 if (browser.equals("firefox")) {
                     FirefoxOptions options = new FirefoxOptions();
+                    // enable headless for remote if requested via config
+                    boolean headless = Boolean.parseBoolean(ConfigReader.get("headless"));
+                    if (headless) options.addArguments("-headless");
                     driver = new RemoteWebDriver(new URL(gridUrl), options);
                 } else {
                     ChromeOptions options = new ChromeOptions();
+                    // respect headless setting from config when running remotely
+                    boolean headless = Boolean.parseBoolean(ConfigReader.get("headless"));
+                    if (headless) {
+                        // new headless mode flag for modern Chrome
+                        options.addArguments("--headless=new");
+                    }
                     options.addArguments("--start-maximized");
+                    // useful flags for CI environments
+                    options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
                     driver = new RemoteWebDriver(new URL(gridUrl), options);
                 }
             } else {
@@ -40,10 +51,19 @@ public class DriverFactory {
                 System.out.println("Running locally (browser=" + browser + ")");
                 if (browser.equals("firefox")) {
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                    FirefoxOptions options = new FirefoxOptions();
+                    if (Boolean.parseBoolean(ConfigReader.get("headless"))) {
+                        options.addArguments("-headless");
+                    }
+                    driver = new FirefoxDriver(options);
                 } else {
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    if (Boolean.parseBoolean(ConfigReader.get("headless"))) {
+                        options.addArguments("--headless=new");
+                    }
+                    options.addArguments("--start-maximized", "--no-sandbox", "--disable-dev-shm-usage");
+                    driver = new ChromeDriver(options);
                 }
             }
         } catch (Exception e) {

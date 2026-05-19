@@ -1,12 +1,12 @@
 package Tests;
 
-import Base.BaseTest;
+import Base.BaseTestTwo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductsPage;
 
 // Feature 3: Search products on /products page
-public class ProductSearchTests extends BaseTest {
+public class ProductSearchTests extends BaseTestTwo {
 
     // TC01: Search bar is visible on products page (guest)
     @Test(priority = 1)
