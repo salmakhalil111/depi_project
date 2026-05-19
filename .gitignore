@@ -40,3 +40,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Nested clone (local only) ###
+depi_project/
+
+### Allure results ###
+allure-results/
