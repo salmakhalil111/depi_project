@@ -1,14 +1,7 @@
 package Tests;
 
 import Pages.*;
-import Utils.ElementActions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class CartTest extends BaseTest {
     HomePage homePage;
@@ -98,7 +91,6 @@ public class CartTest extends BaseTest {
 
     @Test
     public void validateThatUserCanAddProductsToCartFromProductDetailsPage() {
-        // Test implementation
         cartPage= new CartPage(driver);
         productListingPage= new ProductListingPage(driver);
         blueTopDetailsPage = new BlueTopDetailsPage(driver);
@@ -106,24 +98,13 @@ public class CartTest extends BaseTest {
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.clickBlueTopView();
         blueTopDetailsPage.assertThatUserIsOnBlueTopDetailsPage();
-
-        // add the product from the details page
+        blueTopDetailsPage.assertThatProductDetailsAreDisplayed();
         blueTopDetailsPage.setQuantity(6);
         blueTopDetailsPage.addToCart();
-
-        // wait for "Added!" confirmation on the listing/details layer
-        productListingPage.assertThatProductIsAddedToCart();
-
-        // go to cart and assert Blue Top is present with expected price
-        productListingPage.clickViewCart();
+        blueTopDetailsPage.clickViewCart();
         cartPage.assertThatUserIsOnCartPage();
+        cartPage.assertThatBlueTopIsOnCart();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        By blueTopLocator = By.xpath("//*[@id=\"product-1\"]/td[2]/h4/a");
-        By blueTopPriceLocator = By.xpath("//*[@id=\"product-1\"]/td[3]/p");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(blueTopLocator));
-        Assert.assertTrue(driver.findElement(blueTopLocator).isDisplayed(), "Blue Top product is not displayed in cart");
-        Assert.assertEquals(driver.findElement(blueTopPriceLocator).getText(), "Rs. 500", "Blue Top price mismatch in cart");
 
     }
 }

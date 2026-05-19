@@ -19,11 +19,11 @@ public class ElementActions {
         driver.findElement(elementLocator).click();
     }
 
-
     public static void type(WebDriver driver , By elementLocator , String text)
     {
         wait = new WebDriverWait(driver , Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        wait.until(ExpectedConditions.elementToBeClickable(elementLocator));
         driver.findElement(elementLocator).clear();
         driver.findElement(elementLocator).sendKeys(text);
     }

@@ -68,6 +68,10 @@ public class ProductListingPage {
         ElementActions.click(driver, addToCartBlueTop_Btn);
     }
 
+    public void hoverOverBlueTop() {
+        ElementActions.hoverOverElement(driver, addToCartBlueTop_Btn);
+    }
+
     // Assertions
     public void assertThatUserIsOnProductListingPage() {
         Assert.assertEquals(driver.getCurrentUrl(), URL);
@@ -82,8 +86,6 @@ public class ProductListingPage {
         Assert.assertEquals(driver.findElement(addedToCartMessage_Txt).getText(), "Added!");
     }
 
-    public void hoverOverBlueTop() {
-        ElementActions.hoverOverElement(driver, addToCartBlueTop_Btn);
-    }
+
 }
 

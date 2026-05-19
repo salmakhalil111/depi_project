@@ -31,16 +31,21 @@ public class BlueTopDetailsPage extends BaseTest {
     private final By addToCart_Btn = By.xpath("//button[@class='btn btn-default cart']");
     private final By productDescription_Txt = By.xpath("//div[@class='product-details']//p");
     private final By productReviews_Txt = By.xpath("//a[@href='#reviews']");
+    private final By viewCart_btn = By.xpath("//u[text()=\"View Cart\"]");
 
     // Actions
     public void setQuantity(int quantity) {
         ElementActions.type(driver, quantity_TxtBox, String.valueOf(quantity));
     }
 
-        public void addToCart() {
-            ElementActions.click(driver, addToCart_Btn);
-        }
+    public void addToCart() {
+        ElementActions.click(driver, addToCart_Btn);
+    }
 
+    public void clickViewCart()
+    {
+        ElementActions.click(driver,viewCart_btn);
+    }
     // Assertions
     public void assertThatUserIsOnBlueTopDetailsPage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -50,9 +55,18 @@ public class BlueTopDetailsPage extends BaseTest {
     }
 
     public void assertThatProductDetailsAreDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productImage_Img));
         Assert.assertTrue(driver.findElement(productImage_Img).isDisplayed());
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productDescription_Txt));
         Assert.assertTrue(driver.findElement(productDescription_Txt).isDisplayed());
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(quantity_TxtBox));
         Assert.assertTrue(driver.findElement(quantity_TxtBox).isDisplayed());
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(addToCart_Btn));
         Assert.assertTrue(driver.findElement(addToCart_Btn).isDisplayed());
     }
 

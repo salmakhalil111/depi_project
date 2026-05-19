@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class CartPage {
     private final By clear_btn = By.className("cart_quantity_delete");
     private final By sleevelessDressPrice = By.xpath("//*[@id=\"product-3\"]/td[3]/p");
     private final By blueTopQuantity_txt = By.xpath("//*[@id=\"product-1\"]/td/button");
+
     //Actions
     public void navigate() {
         driver.get(URL);
@@ -54,10 +56,9 @@ public class CartPage {
         ElementActions.click(driver, deleteProduct_btn);
     }
 
-   public void clickQuantityBtn(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(blueTop_txt));
-        ElementActions.click(driver,blueTopQuantity_txt);
+    public void clickQuantityBtn() {
+
+        ElementActions.type(driver, blueTopQuantity_txt, "3");
     }
 
     // Assertions
@@ -74,32 +75,38 @@ public class CartPage {
         Assert.assertEquals(driver.findElement(cartEmpty_Txt).getText(), "Cart is empty!");
     }
 
-        // Comprehensive Assertion - Validates product names are displayed and prices match
-        public void assertThatProductsAddedToCart () {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public void assertThatProductsAddedToCart() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            // Assert Blue Top product name is displayed
-            wait.until(ExpectedConditions.visibilityOfElementLocated(blueTop_txt));
-            Assert.assertTrue(driver.findElement(blueTop_txt).isDisplayed(), "Blue Top product name is not displayed");
-            Assert.assertEquals(driver.findElement(bluetopPrice).getText(), "Rs. 500");
+        // Assert Blue Top product name is displayed
+        wait.until(ExpectedConditions.visibilityOfElementLocated(blueTop_txt));
+        Assert.assertTrue(driver.findElement(blueTop_txt).isDisplayed(), "Blue Top product name is not displayed");
+        Assert.assertEquals(driver.findElement(bluetopPrice).getText(), "Rs. 500");
 
-            // Assert Men Tshirt product name is displayed
-            wait.until(ExpectedConditions.visibilityOfElementLocated(menTshirt_txt));
-            Assert.assertTrue(driver.findElement(menTshirt_txt).isDisplayed(), "Men Tshirt product name is not displayed");
-            Assert.assertEquals(driver.findElement(menTshirtPrice).getText(), "Rs. 400");
+        // Assert Men Tshirt product name is displayed
+        wait.until(ExpectedConditions.visibilityOfElementLocated(menTshirt_txt));
+        Assert.assertTrue(driver.findElement(menTshirt_txt).isDisplayed(), "Men Tshirt product name is not displayed");
+        Assert.assertEquals(driver.findElement(menTshirtPrice).getText(), "Rs. 400");
 
-            // Assert Sleeveless Dress product name is displayed
-            wait.until(ExpectedConditions.visibilityOfElementLocated(sleevelessDress_txt));
-            Assert.assertTrue(driver.findElement(sleevelessDress_txt).isDisplayed(), "Sleeveless Dress product name is not displayed");
-            Assert.assertEquals(driver.findElement(sleevelessDressPrice).getText(), "Rs. 1000");
+        // Assert Sleeveless Dress product name is displayed
+        wait.until(ExpectedConditions.visibilityOfElementLocated(sleevelessDress_txt));
+        Assert.assertTrue(driver.findElement(sleevelessDress_txt).isDisplayed(), "Sleeveless Dress product name is not displayed");
+        Assert.assertEquals(driver.findElement(sleevelessDressPrice).getText(), "Rs. 1000");
 
-        }
-public void assertThatQuantityis1(){
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(blueTopQuantity_txt));
-    Assert.assertTrue(driver.findElement(blueTopQuantity_txt).isDisplayed(), "Quantity button is not displayed");
-    Assert.assertEquals(driver.findElement(blueTopQuantity_txt).getText(), "1", "Quantity is not 1 by default");
-}
     }
+
+    public void assertThatQuantityis1() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(blueTopQuantity_txt));
+        Assert.assertTrue(driver.findElement(blueTopQuantity_txt).isDisplayed(), "Quantity button is not displayed");
+        Assert.assertEquals(driver.findElement(blueTopQuantity_txt).getText(), "1", "Quantity is not 1 by default");
+    }
+
+    public void assertThatBlueTopIsOnCart() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(blueTop_txt));
+        Assert.assertTrue(driver.findElement(blueTop_txt).isDisplayed(), "Blue Top product name is not displayed");
+    }
+}
 
 

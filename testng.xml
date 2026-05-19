@@ -8,6 +8,8 @@
         <classes>
             <class name="Tests.LoginTest"/>
             <class name="Tests.LogoutTest"/>
+            <class name="Tests.CartTest"/>
+
         </classes>
     </test>
 
@@ -17,6 +19,8 @@
         <classes>
             <class name="Tests.LoginTest"/>
             <class name="Tests.LogoutTest"/>
+            <class name="Tests.CartTest"/>
+
         </classes>
     </test>
 
