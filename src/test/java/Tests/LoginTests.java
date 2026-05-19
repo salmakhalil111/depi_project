@@ -63,4 +63,18 @@ public class LoginTests extends BaseTest{
         signUpLoginPage.login(email , password);
         signUpLoginPage.assertEmptyFieldMissingErrorMessage();
     }
+
+    @Test
+    @Description("Validatetaht user can logout from his account")
+    public void validateLogout()
+    {
+        homePage = new HomePage(driver);
+        signUpLoginPage = new SignUpLoginPage(driver);
+
+        homePage.navigate();
+        homePage.clickSignupLoginBtn();
+        signUpLoginPage.login("abdo.ayman.ha@gmail.com" , "123456");
+        homePage.clickLogout();
+        signUpLoginPage.assertUserLoggedOut();
+    }
 }
