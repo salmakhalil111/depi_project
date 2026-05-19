@@ -9,14 +9,15 @@ public class LoginDataProvider {
     {
         return new Object[][]{
                 {"lm@gmail.com" , "1234"},
-//                {"abdo.ayman.ha222@gmail" , "123456"},
-//                {"abdo.ayman.ha2223@gmail" , "123456"}
+                {"abdo.ayman.ha@gmail.com" , "123456"},
+//                {"abdo.ayman.ha222@gmail.com" , "123456"},
+//                {"abdo.ayman.ha2223@gmail.com" , "123456"}
         };
     }
 
     // test case 1 : valid email and non valid password
     // test case 2 : non valid email and valid password
-    // test case 2 : non valid email and non valid password
+    // test case 3 : non valid email and non valid password
     @DataProvider(name = "invalidLoginData")
     public Object[][] getInvalidLoginData()
     {
@@ -24,6 +25,7 @@ public class LoginDataProvider {
                 {"lm@gmail.com" , "123456"},
                 {"lml@gmail.com" , "1234"},
                 {"llm@gmail.com" , "123456"},
+                {"abdo.ayman.ha@gmail.com" , "wrongpassword"},
         };
     }
 

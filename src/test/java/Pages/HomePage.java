@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
@@ -17,7 +16,6 @@ public class HomePage {
     private final WebDriver driver;
 
     //======================================== Constructor ===========================//
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -35,13 +33,27 @@ public class HomePage {
         ElementActions.click(driver , signupLogin_btn);
     }
 
+    public void clickSignupLoginBtn() {
+        ElementActions.click(driver , signupLogin_btn);
+    }
+
+    public void clickLogout() {
+        ElementActions.click(driver, logout_btn);
+    }
+
     //======================================== Assertions ===============================//
     public void assertUserLoggedInSuccessfully() {
-        // Assert that the logout button is displayed, which indicates user is logged in
         Assert.assertTrue(driver.findElement(logout_btn).isDisplayed(), "Logout button is not displayed - User is not logged in");
     }
+
     public void assertUserFailedLogIn() {
-        // Assert that the logout button is displayed, which indicates user is logged in
         Assert.assertTrue(driver.findElement(logout_btn).isDisplayed(), "Logout button is not displayed - User is not logged in");
+    }
+
+    public void assertUserLoggedIn() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logout_btn));
+        Assert.assertTrue(driver.findElement(logout_btn).isDisplayed(), "Logout button is not displayed, user might not be logged in.");
+        Assert.assertEquals(driver.getCurrentUrl() , url);
     }
 }

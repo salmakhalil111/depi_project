@@ -28,6 +28,6 @@ public class BaseTest {
         {
             ScreenShotHandler.takeScreenshot(driver , result.getName());
         }
-        driver.quit();
+        DriverFactory.quitDriver(driver);
     }
 }
