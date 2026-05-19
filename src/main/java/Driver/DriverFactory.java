@@ -12,45 +12,45 @@ import java.time.Duration;
 
 public class DriverFactory {
 
-    public static WebDriver initDriver(String browser , String headless)
+    public static WebDriver setDriver(String browser , String headless)
     {
         WebDriver driver ;
 
-        switch (browser.toLowerCase())
-        {
-            case "chrome":
+        switch (browser.toLowerCase()) {
+            case "chrome" -> {
                 ChromeOptions chromeOptions = new ChromeOptions();
-                if(headless.equalsIgnoreCase("true"))
-                {
+                if (headless.equalsIgnoreCase("true")) {
                     chromeOptions.addArguments("--headless");
                 }
                 driver = new ChromeDriver(chromeOptions);
                 System.out.println("Chrome Browser Started !!");
-                break;
-            case "edge":
+            }
+            case "edge" -> {
                 EdgeOptions edgeOptions = new EdgeOptions();
-                if(headless.equalsIgnoreCase("true"))
-                {
-                     edgeOptions.addArguments("--headless");
+                if (headless.equalsIgnoreCase("true")) {
+                    edgeOptions.addArguments("--headless");
                 }
                 driver = new EdgeDriver(edgeOptions);
                 System.out.println("Edge Browser Started !!");
-                break;
-            case "firefox":
+            }
+            case "firefox" -> {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                if(headless.equalsIgnoreCase("true"))
-                {
+                if (headless.equalsIgnoreCase("true")) {
                     firefoxOptions.addArguments("--headless");
                 }
                 driver = new FirefoxDriver(firefoxOptions);
                 System.out.println("FireFox Browser Started !!");
-                break;
-            default:
-                throw new IllegalArgumentException("Unsupported browser: " + browser);
+            }
+            default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        return driver ;
+        return driver;
+    }
+
+    public static WebDriver initDriver(String browser , String headless)
+    {
+        return setDriver(browser, headless);
     }
 
     public static void quitDriver(WebDriver driver)

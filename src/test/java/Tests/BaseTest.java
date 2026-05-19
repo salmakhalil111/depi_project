@@ -1,29 +1,33 @@
 package Tests;
 
 import Driver.DriverFactory;
+import Utils.ScreenShotHandler;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+
 public class BaseTest {
 
-    WebDriver driver;
+    public WebDriver driver ;
 
     @Parameters({"browser" , "headless"})
     @BeforeMethod
-    public void setUp(@Optional("edge") String browser , @Optional("True") String headless)
+    public void preconditions(@Optional("edge") String browserName , @Optional("true") String headless)
     {
-        driver = DriverFactory.initDriver(browser , headless);
+        driver = DriverFactory.setDriver(browserName , headless);
     }
 
-    /*@AfterMethod
-    //public void tearDown(ITestResult result)
-    //{
+    @AfterMethod
+    public void tearDown(ITestResult result)
+    {
         if(result.getStatus() == ITestResult.FAILURE)
         {
-            ScreenShotUtils.takeScreenshot(driver , result.getName());
+            ScreenShotHandler.takeScreenshot(driver , result.getName());
         }
         DriverFactory.quitDriver(driver);
-    }*/
+    }
 }
