@@ -7,7 +7,7 @@
     <groupId>com.depi</groupId>
     <artifactId>Depi_AutomationExercise</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>DEPI Automation Exercise - Products POM</name>
+    <name>DEPI Automation Exercise</name>
     <description>Selenium + TestNG automation for automationexercise.com using Page Object Model.</description>
 
     <properties>
@@ -19,6 +19,8 @@
         <testng.version>7.10.2</testng.version>
         <wdm.version>5.9.2</wdm.version>
         <surefire.version>3.2.5</surefire.version>
+        <allure.version>2.34.0</allure.version>
+        <javafaker.version>1.0.2</javafaker.version>
     </properties>
 
     <dependencies>
@@ -42,6 +44,20 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${wdm.version}</version>
+        </dependency>
+
+        <!-- Java Faker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+
+        <!-- Allure TestNG -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
         </dependency>
     </dependencies>
 
