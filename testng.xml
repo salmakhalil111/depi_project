@@ -6,40 +6,40 @@
 
     <test name="Product Browsing">
         <classes>
-            <class name="Tests.ProductBrowsingTests"/>
+            <class name="tests.ProductBrowsingTests"/>
         </classes>
     </test>
 
     <test name="Product Details">
         <classes>
-            <class name="Tests.ProductDetailsTests"/>
+            <class name="tests.ProductDetailsTests"/>
         </classes>
     </test>
 
     <test name="Product Search">
         <classes>
-            <class name="Tests.ProductSearchTests"/>
+            <class name="tests.ProductSearchTests"/>
         </classes>
     </test>
 
     <test name="Product Filter">
         <classes>
-            <class name="Tests.ProductFilterTests"/>
+            <class name="tests.ProductFilterTests"/>
         </classes>
     </test>
 
     <test name="Header Navigation (Guest + Logged-in)">
         <classes>
-            <class name="Tests.HeaderNavigationTests"/>
+            <class name="tests.HeaderNavigationTests"/>
         </classes>
     </test>
 
     <test name="Login/Register/Cart (Team)">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Tests.LoginTests"/>
-            <class name="Tests.CartTest"/>
-            <class name="Tests.RegisterTest"/>
+            <class name="tests.LoginTests"/>
+            <class name="tests.CartTest"/>
+            <class name="tests.RegisterTest"/>
         </classes>
     </test>
 
