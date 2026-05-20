@@ -1,7 +1,7 @@
 package Tests;
 
-import Pages.HomePage;
-import Pages.SignUpLoginPage;
+import pages.HomePage;
+import pages.SignUpLoginPage;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
