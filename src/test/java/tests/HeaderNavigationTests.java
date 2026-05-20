@@ -8,7 +8,7 @@ import pages.LoginPage;
 import utils.ConfigReader;
 
 // Feature 5: Header navigation (Guest vs Logged-in user)
-public class HeaderNavigationTests extends BaseTestTwo {
+public class HeaderNavigationTests extends BaseTest {
 
     // TC01: Page title contains "Automation Exercise"
     @Test(priority = 1)
