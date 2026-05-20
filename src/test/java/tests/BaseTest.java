@@ -1,5 +1,6 @@
 package tests;
 
+import tests.BaseTest;
 import driver.DriverFactory;
 import utils.ScreenShotUtils;
 import org.openqa.selenium.WebDriver;
