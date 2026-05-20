@@ -10,10 +10,7 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest{
 
-    HomePage homePage;
-    SignUpLoginPage signUpLoginPage ;
-
-
+ 
     @Test(dataProvider = "loginData" , dataProviderClass = LoginDataProvider.class)
     @Description("Validate that user can login successfully with valid credentials")
     public void validateThatUserCanLoginSuccessfullyWithValidCredentials(String email , String password)
