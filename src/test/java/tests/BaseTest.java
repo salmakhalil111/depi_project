@@ -12,14 +12,22 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
 
+    private static final ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
+    public WebDriver getDriver() {
+        return threadLocalDriver.get();
+    }
 
+    
     public WebDriver driver;
 
-    @Parameters({"browser" , "headless"})
+    @Parameters({"browser" , "headless" , "executionType"})
     @BeforeMethod
-    public void Preconditions(@Optional("edge") String browserName , @Optional("true") String headless ) {
-        driver = DriverFactory.initDriver(browserName , headless);
+    public void Preconditions(@Optional("edge") String browserName , @Optional("true") String headless, @Optional("local") String executionType ) {
+       WebDriver driver = DriverFactory.initDriver(browserName , headless , executionType);
+         threadLocalDriver.set(driver);
     }
+
+  
 
     @AfterMethod
     public void tearDown(ITestResult result)
