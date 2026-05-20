@@ -7,7 +7,7 @@ import pages.ProductDetailsPage;
 import pages.ProductsPage;
 
 // Feature 2: Product Details (single product page)
-public class ProductDetailsTests extends BaseTestTwo {
+public class ProductDetailsTests extends BaseTest {
 
     // TC01: Product details page opens after clicking "View Product"
     @Test(priority = 1)
