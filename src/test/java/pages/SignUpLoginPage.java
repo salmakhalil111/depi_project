@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import utils.ElementActions;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ public class SignUpLoginPage {
     //======================================== Variables ==============================//
     private final String url = "https://automationexercise.com/login";
     private final String emailExistErrorMessage = "Email Address already exist!";
-    //======================================== Driver =================================//
+    //======================================== driver =================================//
     private final WebDriver driver ;
 
     //======================================== Constructor ===========================//

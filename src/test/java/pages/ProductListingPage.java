@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import utils.ElementActions;
 import org.openqa.selenium.By;
@@ -15,7 +15,7 @@ public class ProductListingPage {
 
     final private String URL = "https://automationexercise.com/products";
 
-    // Driver
+    // driver
     WebDriver driver;
 
     // Constructor

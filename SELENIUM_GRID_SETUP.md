@@ -138,7 +138,7 @@ No code changes needed.
 | Browser doesn't open on the Hub | Make sure a Node is connected (check `http://localhost:4444`) |
 | `org.openqa.selenium.SessionNotCreatedException` | Chrome version on the Node doesn't match the driver — update Chrome on the Node machine |
 | `Connection refused` | The Hub is not running, OR the URL/port in config.properties is wrong |
-| Tests run locally instead of on Grid | Confirm `grid.enabled=true` and re-build with `mvn clean test` |
+| tests run locally instead of on Grid | Confirm `grid.enabled=true` and re-build with `mvn clean test` |
 | Multiple tests run in serial, not parallel | Add `parallel="methods"` to `testng.xml` `<suite>` tag |
 
 ---

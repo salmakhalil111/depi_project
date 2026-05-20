@@ -1,6 +1,6 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {

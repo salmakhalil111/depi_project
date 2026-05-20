@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Tests.BaseTest;
+import tests.BaseTest;
 import utils.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ public class BlueTopDetailsPage extends BaseTest {
     // Attributes
     final private String URL = "https://automationexercise.com/product_details/1";
 
-    // Driver
+    // driver
     WebDriver driver;
 
     // Constructor

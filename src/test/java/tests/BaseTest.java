@@ -1,6 +1,6 @@
-package Tests;
+package tests;
 
-import Driver.DriverFactory;
+import driver.DriverFactory;
 import utils.ScreenShotHandler;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;

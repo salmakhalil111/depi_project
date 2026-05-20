@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import utils.ElementActions;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import java.time.Duration;
 public class HomePage {
     //======================================== Variables ==============================//
     private final String url = "https://automationexercise.com/";
-    //======================================== Driver =================================//
+    //======================================== driver =================================//
     private final WebDriver driver;
 
     //======================================== Constructor ===========================//
