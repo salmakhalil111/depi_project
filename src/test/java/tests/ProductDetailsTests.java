@@ -12,7 +12,7 @@ public class ProductDetailsTests extends BaseTest {
     // TC01: Product details page opens after clicking "View Product"
     @Test(priority = 1)
     public void openProductDetailsPage() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         ProductDetailsPage details = products.openFirstProductDetails();
         Assert.assertTrue(driver.getCurrentUrl().contains("/product_details/"),
@@ -23,7 +23,7 @@ public class ProductDetailsTests extends BaseTest {
     // TC02: Product price is visible
     @Test(priority = 2)
     public void productPriceIsVisible() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         ProductDetailsPage details = products.openFirstProductDetails();
         Assert.assertTrue(details.isProductPriceVisible(), "Product price should be visible");
@@ -32,7 +32,7 @@ public class ProductDetailsTests extends BaseTest {
     // TC03: Product details show Category, Availability, Condition and Brand
     @Test(priority = 3)
     public void productInformationFieldsVisible() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         ProductDetailsPage details = products.openFirstProductDetails();
         Assert.assertTrue(details.isCategoryVisible(),     "Category should be visible");
@@ -44,7 +44,7 @@ public class ProductDetailsTests extends BaseTest {
     // TC04: Default quantity is 1 and can be changed
     @Test(priority = 4)
     public void quantityFieldDefaultAndUpdate() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         ProductDetailsPage details = products.openFirstProductDetails();
 
@@ -57,7 +57,7 @@ public class ProductDetailsTests extends BaseTest {
     // TC05: "Write Your Review" section visible after scroll
     @Test(priority = 5)
     public void writeYourReviewSectionVisible() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         ProductDetailsPage details = products.openFirstProductDetails();
         Assert.assertTrue(details.isReviewSectionVisible(),
