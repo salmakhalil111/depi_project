@@ -25,9 +25,9 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccount()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -43,9 +43,9 @@ public class RegisterTest extends BaseTest {
     public void userProceedToSignupForm()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -62,8 +62,8 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithMissingEmail()
     {
 
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -78,9 +78,9 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithMissingName()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -96,8 +96,8 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithInvalidEmail()
     {
 
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -114,8 +114,8 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithDuplicatedEmail()
     {
 
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -130,9 +130,9 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccountWithStrongPassword()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -147,9 +147,9 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccountWithWeakPassword()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -163,9 +163,9 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithEmptyFields()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -180,9 +180,9 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithInvalidInformation()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -197,9 +197,9 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithExtremeLongName()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
@@ -213,9 +213,9 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithSpecialCharacter()
     {
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
         homePage.navigate();
