@@ -5,12 +5,7 @@ import pages.*;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
-    HomePage homePage;
-    SignUpLoginPage signupLoginPage;
-    CartPage cartPage;
-    ProductListingPage productListingPage;
-    BlueTopDetailsPage blueTopDetailsPage;
-
+    
 
     @Test
     public void validateThatUserAddProductsToCart() {
