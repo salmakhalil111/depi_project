@@ -1,6 +1,6 @@
 package pages;
 
-import Utils.ElementActions;
+import utils.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +15,7 @@ public class ProductListingPage {
 
     final private String URL = "https://automationexercise.com/products";
 
-    // Driver
+    // driver
     WebDriver driver;
 
     // Constructor

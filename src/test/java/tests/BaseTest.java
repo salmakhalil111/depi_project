@@ -1,7 +1,7 @@
 package tests;
 
-import Driver.DriverFactory;
-import Utils.ScreenShotHandler;
+import driver.DriverFactory;
+import utils.ScreenShotHandler;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
