@@ -18,8 +18,8 @@ public class LoginTests extends BaseTest{
     @Description("Validate that user can login successfully with valid credentials")
     public void validateThatUserCanLoginSuccessfullyWithValidCredentials(String email , String password)
     {
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -32,8 +32,8 @@ public class LoginTests extends BaseTest{
     public void validateThatUserCannotLoginWithValidEmailAndNonValidPassword(String email,
                                                                              String password)
     {
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -44,8 +44,8 @@ public class LoginTests extends BaseTest{
     @Test
     @Description("Validate that user cannot login with non valid email format")
     public void validateThatUserCannotLoginWithInvalidEmailFormat(){
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -56,8 +56,8 @@ public class LoginTests extends BaseTest{
     @Test(dataProvider = "EmptyFields" , dataProviderClass = LoginDataProvider.class)
     @Description("Validate that user cannot login with non valid email format")
     public void validateThatUserCannotLoginWithEmptyFields(String email, String password){
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -69,8 +69,8 @@ public class LoginTests extends BaseTest{
     @Description("Validatetaht user can logout from his account")
     public void validateLogout()
     {
-        homePage = new HomePage(driver);
-        signUpLoginPage = new SignUpLoginPage(driver);
+        homePage = new HomePage(getDriver());
+        signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLoginBtn();
