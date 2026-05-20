@@ -1,66 +1,44 @@
 package Tests;
 
-import Base.BaseTestTwo;
-import org.testng.Assert;
+import Pages.*;
 import org.testng.annotations.Test;
-import pages.ProductsPage;
 
-// Feature 4: Filter products by Category or Brand
-public class ProductFilterTests extends BaseTestTwo {
+public class ProductFilterTests extends BaseTest {
+    ProductListingPage productListingPage;
 
-    // TC01: Category sidebar is visible on products page
-    @Test(priority = 1)
-    public void categorySidebarVisible() {
-        ProductsPage products = new ProductsPage(driver);
-        products.open();
-        Assert.assertTrue(products.isCategorySidebarVisible(),
-                "Category sidebar should be visible");
+    @Test
+    public void validateThatCategoryAndBrandSidebarsAreVisible() {
+        productListingPage = new ProductListingPage(driver);
+        productListingPage.navigate();
+        productListingPage.assertThatUserIsOnProductListingPage();
+        productListingPage.assertThatSidebarsAreVisible();
     }
 
-    // TC02: Click on "Women" category expands the list (sub-category appears clickable)
-    @Test(priority = 2)
-    public void filterByWomenDressSubCategory() {
-        ProductsPage products = new ProductsPage(driver);
-        products.open();
-        products.openWomenSubCategory("Dress");
-        String title = products.getCategoryTitle().toLowerCase();
-        Assert.assertTrue(title.contains("women") && title.contains("dress"),
-                "Page title should reflect Women - Dress filter. Actual: " + title);
+    @Test
+    public void validateUserCanFilterByWomenDressCategory() {
+        productListingPage = new ProductListingPage(driver);
+        productListingPage.navigate();
+        productListingPage.assertThatUserIsOnProductListingPage();
+        productListingPage.clickWomenCategory();
+        productListingPage.clickWomenDressSubCategory();
+        productListingPage.assertThatCategoryPageIsDisplayed("Women - Dress Products");
     }
 
-    // TC03: Filter by Men - Tshirts
-    @Test(priority = 3)
-    public void filterByMenTshirtsSubCategory() {
-        ProductsPage products = new ProductsPage(driver);
-        products.open();
-        products.clickMenCategory();
-        org.openqa.selenium.By sub =
-                org.openqa.selenium.By.xpath("//div[@id='Men']//a[normalize-space()='Tshirts']");
-        products.click(sub);
-        String title = products.getCategoryTitle().toLowerCase();
-        Assert.assertTrue(title.contains("men") && title.contains("tshirts"),
-                "Page title should reflect Men - Tshirts filter. Actual: " + title);
+    @Test
+    public void validateUserCanFilterByMenTshirtsCategory() {
+        productListingPage = new ProductListingPage(driver);
+        productListingPage.navigate();
+        productListingPage.clickMenCategory();
+        productListingPage.clickMenTshirtsSubCategory();
+        productListingPage.assertThatCategoryPageIsDisplayed("Men - Tshirts Products");
     }
 
-    // TC04: Brands sidebar is visible
-    @Test(priority = 4)
-    public void brandsSidebarVisible() {
-        ProductsPage products = new ProductsPage(driver);
-        products.open();
-        Assert.assertTrue(products.isBrandsSidebarVisible(),
-                "Brands sidebar should be visible");
-    }
-
-    // TC05: Filter by brand "Polo"
-    @Test(priority = 5)
-    public void filterByPoloBrand() {
-        ProductsPage products = new ProductsPage(driver);
-        products.open();
-        products.clickBrand("Polo");
-        String title = products.getBrandResultTitle().toLowerCase();
-        Assert.assertTrue(title.contains("polo"),
-                "Brand title should contain 'Polo'. Actual: " + title);
-        Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("polo"),
-                "URL should contain the brand name");
+    @Test
+    public void validateUserCanFilterByPoloBrand() {
+        productListingPage = new ProductListingPage(driver);
+        productListingPage.navigate();
+        productListingPage.assertThatUserIsOnProductListingPage();
+        productListingPage.clickPoloBrand();
+        productListingPage.assertThatBrandPageIsDisplayed("Polo");
     }
 }

@@ -1,81 +1,57 @@
 package Tests;
 
-import Base.BaseTestTwo;
-import org.testng.Assert;
+import Pages.*;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.LoginPage;
-import utils.ConfigReader;
 
-// Feature 5: Header navigation (Guest vs Logged-in user)
-public class HeaderNavigationTests extends BaseTestTwo {
+public class HeaderNavigationTests extends BaseTest {
+    HomePage homePage;
+    SignUpLoginPage signupLoginPage;
+    ProductListingPage productListingPage;
+    CartPage cartPage;
 
-    // TC01: Page title contains "Automation Exercise"
-    @Test(priority = 1)
-    public void homepageTitleIsCorrect() {
-        HomePage home = new HomePage(driver);
-        home.open();
-        Assert.assertTrue(driver.getTitle().contains("Automation Exercise"),
-                "Page title should contain 'Automation Exercise'");
+    @Test
+    public void validateThatUserIsOnHomePage() {
+        homePage = new HomePage(driver);
+        homePage.navigate();
+        homePage.assertThatUserIsOnHomePage();
     }
 
-    // TC02: As a guest, "Signup / Login" link is visible
-    @Test(priority = 2)
-    public void guestSeesSignupLoginLink() {
-        HomePage home = new HomePage(driver);
-        home.open();
-        Assert.assertTrue(home.isSignupLoginVisible(),
-                "Guest user should see 'Signup / Login' link");
-        Assert.assertFalse(home.isLogoutVisible(),
-                "Guest user should NOT see 'Logout' link");
+    @Test
+    public void validateAllNavbarLinksAreVisibleForGuest() {
+        homePage = new HomePage(driver);
+        homePage.navigate();
+        homePage.assertThatUserIsOnHomePage();
+        homePage.assertThatNavbarLinksAreVisibleForGuest();
+        homePage.assertThatSignupLoginLinkIsVisible();
     }
 
-    // TC03: All main navbar links are visible for a guest
-    @Test(priority = 3)
-    public void allNavbarLinksVisibleForGuest() {
-        HomePage home = new HomePage(driver);
-        home.open();
-        Assert.assertTrue(home.isLogoDisplayed(),        "Logo should be visible");
-        Assert.assertTrue(home.isProductsLinkVisible(),  "Products link should be visible");
-        Assert.assertTrue(home.isCartLinkVisible(),      "Cart link should be visible");
-        Assert.assertTrue(home.isContactUsLinkVisible(), "Contact Us link should be visible");
-        Assert.assertTrue(home.isTestCasesLinkVisible(), "Test Cases link should be visible");
-        Assert.assertTrue(home.isApiListLinkVisible(),   "API List link should be visible");
+    @Test
+    public void validateUserCanNavigateToProductsFromHeader() {
+        homePage = new HomePage(driver);
+        productListingPage = new ProductListingPage(driver);
+        homePage.navigate();
+        homePage.clickProductsLink();
+        productListingPage.assertThatUserIsOnProductListingPage();
     }
 
-    // TC04: After login, "Logout" link is visible (uses placeholder credentials)
-    // NOTE: This test will fail until real credentials are set in config.properties.
-    @Test(priority = 4)
-    public void loggedInUserSeesLogoutLink() {
-        HomePage home = new HomePage(driver);
-        home.open();
-        LoginPage login = home.goToLogin();
-        Assert.assertTrue(login.isLoginFormVisible(), "Login form should be visible");
-
-        String email    = ConfigReader.get("test.email");
-        String password = ConfigReader.get("test.password");
-        login.login(email, password);
-
-        Assert.assertTrue(home.isLogoutVisible(),
-                "After login, user should see 'Logout' link");
-        Assert.assertTrue(home.isDeleteAccountVisible(),
-                "After login, user should see 'Delete Account' link");
+    @Test
+    public void validateUserCanNavigateToCartFromHeader() {
+        homePage = new HomePage(driver);
+        cartPage = new CartPage(driver);
+        homePage.navigate();
+        homePage.clickCartLink();
+        cartPage.assertThatUserIsOnCartPage();
     }
 
-    // TC05: After login, the "Logged in as <username>" banner shows the right name
-    @Test(priority = 5)
-    public void loggedInUsernameIsShown() {
-        HomePage home = new HomePage(driver);
-        home.open();
-        LoginPage login = home.goToLogin();
-
-        String email    = ConfigReader.get("test.email");
-        String password = ConfigReader.get("test.password");
-        String expectedUsername = ConfigReader.get("test.username");
-
-        login.login(email, password);
-        Assert.assertTrue(home.isLoggedInTextVisible(), "'Logged in as ...' should appear");
-        Assert.assertEquals(home.getLoggedInUsername(), expectedUsername,
-                "Logged-in username should match the test account");
+    @Test
+    public void validateLogoutLinkVisibleAfterLogin() {
+        homePage = new HomePage(driver);
+        signupLoginPage = new SignUpLoginPage(driver);
+        homePage.navigate();
+        homePage.clickSignupLoginBtn();
+        signupLoginPage.login("amrm@qa.team", "12345678");
+        homePage.assertUserLoggedIn();
+        homePage.assertThatLogoutLinkIsVisible();
+        homePage.assertThatLoggedInBannerIsVisible();
     }
 }

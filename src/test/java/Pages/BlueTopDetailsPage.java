@@ -54,6 +54,17 @@ public class BlueTopDetailsPage extends BaseTest {
         Assert.assertTrue(driver.findElement(productPrice_Txt).isDisplayed());
     }
 
+    public void assertThatQuantityIs(int expected) {
+        String actual = driver.findElement(quantity_TxtBox).getAttribute("value");
+        Assert.assertEquals(actual, String.valueOf(expected),
+                "Expected quantity " + expected + " but got " + actual);
+    }
+
+    public void assertThatProductPriceIsVisible() {
+        Assert.assertTrue(driver.findElement(productPrice_Txt).isDisplayed(),
+                "Product price should be visible");
+    }
+
     public void assertThatProductDetailsAreDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
