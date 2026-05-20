@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import Driver.DriverFactory;
 import Utils.ScreenShot;
