@@ -1,6 +1,5 @@
 package tests;
 
-import tests.BaseTest;
 import pages.*;
 import org.testng.annotations.Test;
 
@@ -10,10 +9,10 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatUserAddProductsToCart() {
         // Test implementation
-        homePage = new HomePage(getDriver());
-        cartPage = new CartPage(getDriver());
-        productListingPage = new ProductListingPage(getDriver());
-        homePage.navigate();
+        MainHomePage homePage = new MainHomePage(getDriver());
+        CartPage cartPage = new CartPage(getDriver());
+        ProductListingPage productListingPage = new ProductListingPage(getDriver());
+        homePage.open();
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addProductsToCart();
@@ -25,8 +24,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateTheUserDeleteProductsFromCart() {        // Test implementation
 
-        cartPage= new CartPage(getDriver());
-        productListingPage= new ProductListingPage(getDriver());
+        CartPage cartPage= new CartPage(getDriver());
+        ProductListingPage productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addProductsToCart();
@@ -39,17 +38,16 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatUserAddProductsWhenLoggedIn() {
         // Test implementation
-        homePage = new HomePage(getDriver());
-        signupLoginPage = new SignUpLoginPage(getDriver());
-        cartPage = new CartPage(getDriver());
-        productListingPage = new ProductListingPage(getDriver());
-        homePage.navigate();
+        MainHomePage homePage = new MainHomePage(getDriver());
+        SignUpLoginPage signupLoginPage = new SignUpLoginPage(getDriver());
+        CartPage cartPage = new CartPage(getDriver());
+        ProductListingPage productListingPage = new ProductListingPage(getDriver());
+        homePage.open();
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addProductsToCart();
         homePage.clickSignupLoginBtn();
         signupLoginPage.login("amrm@qa.team", "12345678");
-        homePage.assertUserLoggedIn();
         cartPage.navigate();
         cartPage.assertThatUserIsOnCartPage();
         cartPage.assertThatProductsAddedToCart();
@@ -60,8 +58,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateUserUpdateProductQuantityFromCart() {
         // Test implementation
-        cartPage= new CartPage(getDriver());
-        productListingPage= new ProductListingPage(getDriver());
+        CartPage cartPage= new CartPage(getDriver());
+        ProductListingPage productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         //productListingPage.addProductToCart(1);
@@ -73,8 +71,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatQuantityIs1WhenAddingFromProductListingPage() {
         // Test implementation
-        cartPage= new CartPage(getDriver());
-        productListingPage= new ProductListingPage(getDriver());
+        CartPage cartPage= new CartPage(getDriver());
+        ProductListingPage productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addBlueTopProductToCart();
@@ -87,9 +85,9 @@ public class CartTest extends BaseTest {
 
     @Test
     public void validateThatUserCanAddProductsToCartFromProductDetailsPage() {
-        cartPage= new CartPage(getDriver());
-        productListingPage= new ProductListingPage(getDriver());
-        blueTopDetailsPage = new BlueTopDetailsPage(getDriver());
+        CartPage cartPage= new CartPage(getDriver());
+        ProductListingPage productListingPage= new ProductListingPage(getDriver());
+        BlueTopDetailsPage blueTopDetailsPage = new BlueTopDetailsPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.clickBlueTopView();

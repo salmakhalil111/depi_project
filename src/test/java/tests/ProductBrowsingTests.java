@@ -1,9 +1,8 @@
 package tests;
 
-import tests.BaseTest;
+import pages.MainHomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import pages.ProductsPage;
 
 // Feature 1: Product Browsing (Guest user)
@@ -12,7 +11,7 @@ public class ProductBrowsingTests extends BaseTest {
     // TC01: Go to Products page from home navbar
     @Test(priority = 1)
     public void navigateToProductsPageFromNavbar() {
-        HomePage home = new HomePage(getDriver());
+        MainHomePage home = new MainHomePage(getDriver());
         home.open();
         ProductsPage products = home.goToProducts();
         Assert.assertTrue(products.isAllProductsHeaderVisible(), "All Products header should be visible");

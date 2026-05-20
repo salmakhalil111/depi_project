@@ -3,8 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-// HomePage: the main page of the website (header + navigation bar)
-public class HomePage extends BasePage {
+// MainHomePage: the main page of the website (header + navigation bar)
+public class MainHomePage extends BasePage {
 
     // ---- Locators ----
     By logo            = By.cssSelector("a[href='/'] img");
@@ -18,7 +18,7 @@ public class HomePage extends BasePage {
     By apiListLink     = By.cssSelector("a[href='/api_list']");
     By loggedInText    = By.xpath("//a[contains(text(),'Logged in as')]");
 
-    public HomePage(WebDriver driver) {
+    public MainHomePage(WebDriver driver) {
         super(driver);
     }
 
@@ -54,5 +54,9 @@ public class HomePage extends BasePage {
     public String getLoggedInUsername() {
         String fullText = getText(loggedInText); // "Logged in as Salma"
         return fullText.replace("Logged in as", "").trim();
+    }
+
+    public void clickSignupLoginBtn() {
+        click(signupLoginLink);
     }
 }

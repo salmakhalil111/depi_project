@@ -1,17 +1,19 @@
-package Tests;
+package tests;
 
 import tests.BaseTest;
-import pages.HomePage;
+import pages.MainHomePage;
 import pages.SignUpLoginPage;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
+
+import java.util.Random;
 
 
 public class RegisterTest extends BaseTest {
 
 
 
-    Faker faker = new Faker(getDriver());
+    Faker faker = new Faker((Random) getDriver());
 
 
 
@@ -24,12 +26,12 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccount()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("Test", email);
         signUpLoginPage.createNewAccount();
@@ -42,12 +44,12 @@ public class RegisterTest extends BaseTest {
     public void userProceedToSignupForm()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("Test", email);
         signUpLoginPage.assertSignupFormPage();
@@ -61,11 +63,11 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithMissingEmail()
     {
 
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("test", "");
         signUpLoginPage.assertPopupEmailErrorMsg();
@@ -77,12 +79,12 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithMissingName()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("", email);
         signUpLoginPage.assertPopupNameErrorMsg();
@@ -95,11 +97,11 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithInvalidEmail()
     {
 
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("test", "test@");
         signUpLoginPage.assertEmailFormatErrorPopupMsg();
@@ -113,11 +115,11 @@ public class RegisterTest extends BaseTest {
     public void userCanNotRegisterWithDuplicatedEmail()
     {
 
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("test", "testtt30@gmail.com");
         signUpLoginPage.assertErrorMsg();
@@ -129,12 +131,12 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccountWithStrongPassword()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("Test", email);
         signUpLoginPage.enterPassword("MySecureP@ssw0rd!23");
@@ -146,12 +148,12 @@ public class RegisterTest extends BaseTest {
     public void validateCreatingNewAccountWithWeakPassword()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("Test", email);
         signUpLoginPage.enterPassword("12");
@@ -162,12 +164,12 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithEmptyFields()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("test", email);
         signUpLoginPage.emptyRegistrationInformation();
@@ -179,12 +181,12 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithInvalidInformation()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("test", email);
         signUpLoginPage.registrationWithInvalidInformation();
@@ -196,12 +198,12 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithExtremeLongName()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", email);
         signUpLoginPage.assertPopupLongNameErrorMsg();
@@ -212,12 +214,12 @@ public class RegisterTest extends BaseTest {
     public void validateUserCanNotRegisterWithSpecialCharacter()
     {
 
-        homePage = new HomePage(getDriver());
-        email = faker.internet().emailAddress();
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        MainHomePage homePage = new MainHomePage(getDriver());
+        String email = faker.internet().emailAddress();
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
 
-        homePage.navigate();
+        homePage.open();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.enterNameAndEmail("@", email);
         signUpLoginPage.assertPopupSpecialCharacterErrorMsg();

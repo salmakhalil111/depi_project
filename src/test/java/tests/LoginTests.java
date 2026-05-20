@@ -1,6 +1,5 @@
 package tests;
 
-import tests.BaseTest;
 import pages.HomePage;
 import pages.SignUpLoginPage;
 import testData.LoginDataProvider;
@@ -15,8 +14,8 @@ public class LoginTests extends BaseTest{
     @Description("Validate that user can login successfully with valid credentials")
     public void validateThatUserCanLoginSuccessfullyWithValidCredentials(String email , String password)
     {
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -29,8 +28,8 @@ public class LoginTests extends BaseTest{
     public void validateThatUserCannotLoginWithValidEmailAndNonValidPassword(String email,
                                                                              String password)
     {
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -41,8 +40,8 @@ public class LoginTests extends BaseTest{
     @Test
     @Description("Validate that user cannot login with non valid email format")
     public void validateThatUserCannotLoginWithInvalidEmailFormat(){
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -53,8 +52,8 @@ public class LoginTests extends BaseTest{
     @Test(dataProvider = "EmptyFields" , dataProviderClass = LoginDataProvider.class)
     @Description("Validate that user cannot login with non valid email format")
     public void validateThatUserCannotLoginWithEmptyFields(String email, String password){
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLogin();
@@ -66,13 +65,25 @@ public class LoginTests extends BaseTest{
     @Description("Validatetaht user can logout from his account")
     public void validateLogout()
     {
-        homePage = new HomePage(getDriver());
-        signUpLoginPage = new SignUpLoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
 
         homePage.navigate();
         homePage.clickSignupLoginBtn();
         signUpLoginPage.login("abdo.ayman.ha@gmail.com" , "123456");
         homePage.clickLogout();
         signUpLoginPage.assertUserLoggedOut();
+    }
+    @Test
+    @Description("Validate that user can logout from his account")
+    public void validateUserCanLoginWithCapitalLettersInEmail()
+    {
+        HomePage homePage = new HomePage(getDriver());
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(getDriver());
+
+        homePage.navigate();
+        homePage.clickSignupLogin();
+        signUpLoginPage.login("Lm@gmail.com" , "1234");
+        homePage.assertUserLoggedInSuccessfully();
     }
 }

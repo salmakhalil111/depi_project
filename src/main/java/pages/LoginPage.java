@@ -23,11 +23,11 @@ public class LoginPage extends BasePage {
     }
 
     // log in with email and password
-    public HomePage login(String email, String password) {
+    public MainHomePage login(String email, String password) {
         type(loginEmail, email);
         type(loginPassword, password);
         click(loginButton);
-        return new HomePage(driver);
+        return new MainHomePage(driver);
     }
 
     // check if "incorrect email or password" message appears

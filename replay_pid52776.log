@@ -1,0 +1,151 @@
+version 2
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 1
+JvmtiExport can_post_on_exceptions 0
+# 485 ciObject found
+instanceKlass sun/reflect/annotation/AnnotationInvocationHandler
+ciInstanceKlass java/lang/Cloneable 1 0 7 100 1 100 1 1 1
+instanceKlass io/qameta/allure/testng/TestInstanceParameter
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a5400
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a5000
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a4c00
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a4800
+instanceKlass  @bci org/openqa/selenium/WebDriverException createMessage (Ljava/lang/String;)Ljava/lang/String; 72 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a36d0
+instanceKlass  @bci org/openqa/selenium/WebDriverException getAdditionalInformation ()Ljava/lang/String; 32 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a3480
+instanceKlass  @bci org/openqa/selenium/WebDriverException getDriverName ([Ljava/lang/StackTraceElement;)Ljava/lang/String; 24 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a3228
+instanceKlass  @bci org/openqa/selenium/WebDriverException getDriverName ([Ljava/lang/StackTraceElement;)Ljava/lang/String; 14 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a2fd8
+instanceKlass  @bci org/openqa/selenium/WebDriverException getDriverName ([Ljava/lang/StackTraceElement;)Ljava/lang/String; 4 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a2d78
+instanceKlass  @bci org/openqa/selenium/WebDriverException getAdditionalInformation ()Ljava/lang/String; 7 <appendix> member <vmtarget> ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a2b20
+instanceKlass  @bci org/openqa/selenium/WebDriverException createMessage (Ljava/lang/String;)Ljava/lang/String; 7 <appendix> argL0 ; # org/openqa/selenium/WebDriverException$$Lambda+0x000001eeb72a28d0
+instanceKlass  @bci org/openqa/selenium/remote/tracing/opentelemetry/SeleniumSpanExporter$1 lambda$export$4 (Lio/opentelemetry/sdk/trace/data/SpanData;)V 55 <appendix> member <vmtarget> ; # org/openqa/selenium/remote/tracing/opentelemetry/SeleniumSpanExporter$1$$Lambda+0x000001eeb72a2688
+instanceKlass  @bci jdk/internal/net/http/HttpClientImpl stop ()V 23 <appendix> member <vmtarget> ; # jdk/internal/net/http/HttpClientImpl$$Lambda+0x000001eeb724f178
+instanceKlass  @bci jdk/internal/net/http/Http2ClientImpl stop ()V 87 <appendix> member <vmtarget> ; # jdk/internal/net/http/Http2ClientImpl$$Lambda+0x000001eeb724ef10
+instanceKlass  @bci jdk/internal/net/http/SocketTube$InternalReadPublisher$InternalReadSubscription pauseReadEvent ()V 47 <appendix> member <vmtarget> ; # jdk/internal/net/http/SocketTube$InternalReadPublisher$InternalReadSubscription$$Lambda+0x000001eeb724ecc8
+instanceKlass  @bci jdk/internal/net/http/ConnectionPool stop ()V 88 <appendix> member <vmtarget> ; # jdk/internal/net/http/ConnectionPool$$Lambda+0x000001eeb724ea80
+instanceKlass  @bci jdk/internal/net/http/ConnectionPool stop ()V 23 <appendix> argL0 ; # jdk/internal/net/http/ConnectionPool$$Lambda+0x000001eeb724e830
+instanceKlass java/util/LinkedList$LLSpliterator
+instanceKlass pages/ProductListingPage
+instanceKlass pages/CartPage
+instanceKlass  @bci org/testng/internal/invokers/TestMethodWorker invokeAfterClassMethods (Lorg/testng/ITestClass;Lorg/testng/IMethodInstance;)V 55 <appendix> argL0 ; # org/testng/internal/invokers/TestMethodWorker$$Lambda+0x000001eeb72a1f68
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a4400
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb72a4000
+instanceKlass java/lang/invoke/MethodHandle$1
+instanceKlass org/testng/internal/invokers/ExceptionUtils
+instanceKlass  @bci org/testng/internal/Parameters handleParameters (Lorg/testng/ITestObjectFactory;Lorg/testng/ITestNGMethod;Ljava/util/Map;Ljava/lang/Object;Lorg/testng/internal/Parameters$MethodParameters;Lorg/testng/xml/XmlSuite;Lorg/testng/internal/annotations/IAnnotationFinder;Ljava/lang/Object;Lorg/testng/DataProviderHolder;Ljava/lang/String;)Lorg/testng/internal/invokers/ParameterHolder; 490 <appendix> member <vmtarget> ; # org/testng/internal/Parameters$$Lambda+0x000001eeb72a1858
+instanceKlass org/testng/internal/FilteredParameters
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg afterDataProviderExecution (Lorg/testng/IDataProviderMethod;Lorg/testng/ITestNGMethod;Lorg/testng/ITestContext;)V 18 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72a13a0
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg beforeDataProviderExecution (Lorg/testng/IDataProviderMethod;Lorg/testng/ITestNGMethod;Lorg/testng/ITestContext;)V 100 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72a1158
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg beforeDataProviderExecution (Lorg/testng/IDataProviderMethod;Lorg/testng/ITestNGMethod;Lorg/testng/ITestContext;)V 88 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72a0f10
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg beforeDataProviderExecution (Lorg/testng/IDataProviderMethod;Lorg/testng/ITestNGMethod;Lorg/testng/ITestContext;)V 14 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72a0cb8
+instanceKlass org/testng/internal/DataProviderMethod
+instanceKlass  @bci java/util/stream/IntPipeline boxed ()Ljava/util/stream/Stream; 1 <appendix> argL0 ; # java/util/stream/IntPipeline$$Lambda+0x000001eeb72c7600
+instanceKlass org/testng/internal/collections/Ints
+instanceKlass java/util/stream/Sink$ChainedInt
+instanceKlass java/util/stream/Sink$OfInt
+instanceKlass  @bci sun/reflect/annotation/AnnotationInvocationHandler memberValueToString (Ljava/lang/Object;)Ljava/lang/String; 238 <appendix> argL0 ; # sun/reflect/annotation/AnnotationInvocationHandler$$Lambda+0x000001eeb72c6b80
+instanceKlass java/util/Spliterators$IntArraySpliterator
+instanceKlass org/testng/IRetryDataProvider$DisableDataProviderRetries
+instanceKlass org/testng/IRetryDataProvider
+instanceKlass  @bci org/testng/internal/DynamicGraph setStatus (Ljava/lang/Object;Lorg/testng/IDynamicGraph$Status;)V 364 <appendix> member <vmtarget> ; # org/testng/internal/DynamicGraph$$Lambda+0x000001eeb729cc20
+instanceKlass org/testng/internal/DynamicGraph$1
+instanceKlass java/util/concurrent/ConcurrentLinkedQueue$Itr
+instanceKlass  @bci org/testng/internal/invokers/ConfigInvoker setClassInvocationFailure (Ljava/lang/Class;Ljava/lang/Object;)V 13 <appendix> argL0 ; # org/testng/internal/invokers/ConfigInvoker$$Lambda+0x000001eeb729d9a0
+instanceKlass  @bci java/util/regex/Pattern ALL ()Ljava/util/regex/Pattern$CharPredicate; 0 <appendix> argL0 ; # java/util/regex/Pattern$$Lambda+0x000001eeb72c6360
+instanceKlass com/intellij/rt/execution/testFrameworks/AbstractExpectedPatterns
+instanceKlass com/intellij/rt/execution/junit/FileComparisonData
+instanceKlass com/intellij/rt/execution/junit/ComparisonFailureData
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg setStatus (Lio/qameta/allure/model/Status;Lio/qameta/allure/model/StatusDetails;)Ljava/util/function/Consumer; 2 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb729f450
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onConfigurationFailure (Lorg/testng/ITestResult;)V 88 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb729f210
+instanceKlass java/lang/Throwable$PrintStreamOrWriter
+instanceKlass  @bci io/qameta/allure/util/ResultsUtils getStatusDetails (Ljava/lang/Throwable;)Ljava/util/Optional; 4 <appendix> argL0 ; # io/qameta/allure/util/ResultsUtils$$Lambda+0x000001eeb729efc0
+instanceKlass  @bci io/qameta/allure/util/ResultsUtils getStatus (Ljava/lang/Throwable;)Ljava/util/Optional; 4 <appendix> argL0 ; # io/qameta/allure/util/ResultsUtils$$Lambda+0x000001eeb729ed70
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg afterInvocation (Lorg/testng/IInvokedMethod;Lorg/testng/ITestResult;)V 68 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb729eb28
+instanceKlass java/lang/StackTraceElement$HashedModules
+instanceKlass jdk/internal/reflect/AccessorUtils
+# instanceKlass java/lang/invoke/LambdaForm$MH+0x000001eeb729c400
+instanceKlass  @bci io/qameta/allure/AllureLifecycle startTearDownFixture (Ljava/lang/String;Ljava/lang/String;Lio/qameta/allure/model/FixtureResult;)V 10 <appendix> member <vmtarget> ; # io/qameta/allure/AllureLifecycle$$Lambda+0x000001eeb729e8e0
+instanceKlass org/testng/internal/Parameters$FilterOutInjectedTypesResult
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier afterTestWrite (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729e480
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeTestWrite (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729e240
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier afterTestStop (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729e000
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeTestStop (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729bc70
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier afterTestUpdate (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729ba30
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeTestUpdate (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb729b7f0
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg setStatus (Lio/qameta/allure/model/Status;)Ljava/util/function/Consumer; 1 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb729b5a8
+instanceKlass org/testng/internal/invokers/TestInvoker$StatusHolder
+instanceKlass org/testng/internal/RegexpExpectedExceptionsHolder
+instanceKlass org/testng/internal/invokers/ExpectedExceptionsHolder
+instanceKlass org/testng/Assert
+instanceKlass  @bci org/openqa/selenium/remote/codec/w3c/W3CHttpCommandCodec amendParameters (Ljava/lang/String;Ljava/util/Map;)Ljava/util/Map; 1383 <appendix> member <vmtarget> ; # org/openqa/selenium/remote/codec/w3c/W3CHttpCommandCodec$$Lambda+0x000001eeb729aaa8
+instanceKlass  @bci java/util/stream/Collectors joining ()Ljava/util/stream/Collector; 19 <appendix> argL0 ; # java/util/stream/Collectors$$Lambda+0x000001eeb72c5448
+instanceKlass  @bci java/util/stream/Collectors joining ()Ljava/util/stream/Collector; 14 <appendix> argL0 ; # java/util/stream/Collectors$$Lambda+0x000001eeb72c51f0
+instanceKlass  @bci java/util/stream/Collectors joining ()Ljava/util/stream/Collector; 9 <appendix> argL0 ; # java/util/stream/Collectors$$Lambda+0x000001eeb72c4fb0
+instanceKlass  @bci java/util/stream/Collectors joining ()Ljava/util/stream/Collector; 4 <appendix> argL0 ; # java/util/stream/Collectors$$Lambda+0x000001eeb72c4d80
+instanceKlass  @bci org/openqa/selenium/remote/RemoteWebElement sendKeys ([Ljava/lang/CharSequence;)V 85 <appendix> member <vmtarget> ; # org/openqa/selenium/remote/RemoteWebElement$$Lambda+0x000001eeb729a850
+instanceKlass jdk/internal/util/ImmutableBitSetPredicate
+instanceKlass java/util/function/IntPredicate
+instanceKlass java/net/URLEncoder
+instanceKlass org/openqa/selenium/net/Urls
+instanceKlass org/openqa/selenium/support/ui/ExpectedConditions$22
+instanceKlass org/openqa/selenium/remote/ShadowRoot
+instanceKlass org/openqa/selenium/WrapsElement
+instanceKlass org/openqa/selenium/remote/WebElementToJsonConverter
+instanceKlass  @bci org/openqa/selenium/remote/codec/w3c/W3CHttpCommandCodec executeAtom (Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Map; 5 <appendix> member <vmtarget> ; # org/openqa/selenium/remote/codec/w3c/W3CHttpCommandCodec$$Lambda+0x000001eeb7299c70
+instanceKlass org/openqa/selenium/interactions/Coordinates
+instanceKlass  @bci org/openqa/selenium/remote/RemoteWebDriver findElement (Lorg/openqa/selenium/By;)Lorg/openqa/selenium/WebElement; 10 <appendix> argL0 ; # org/openqa/selenium/remote/RemoteWebDriver$$Lambda+0x000001eeb7299a30
+instanceKlass org/openqa/selenium/support/ui/ExpectedConditions$7
+instanceKlass org/openqa/selenium/support/ui/ExpectedCondition
+instanceKlass org/openqa/selenium/support/ui/ExpectedConditions
+instanceKlass  @bci org/openqa/selenium/support/ui/FluentWait <init> (Ljava/lang/Object;Ljava/time/Clock;Lorg/openqa/selenium/support/ui/Sleeper;)V 19 <appendix> argL0 ; # org/openqa/selenium/support/ui/FluentWait$$Lambda+0x000001eeb7299348
+instanceKlass  @bci org/openqa/selenium/support/ui/Sleeper <clinit> ()V 0 <appendix> argL0 ; # org/openqa/selenium/support/ui/Sleeper$$Lambda+0x000001eeb7299118
+instanceKlass  @cpi org/openqa/selenium/support/ui/Sleeper 41 form vmentry <vmtarget> ; # java/lang/invoke/LambdaForm$DMH+0x000001eeb729c000
+instanceKlass org/openqa/selenium/support/ui/Sleeper
+instanceKlass org/openqa/selenium/support/ui/FluentWait
+instanceKlass org/openqa/selenium/support/ui/Wait
+instanceKlass utils/ElementActions
+instanceKlass pages/SignUpLoginPage
+instanceKlass pages/HomePage
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onTestStart (Lorg/testng/ITestResult;)V 105 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7298000
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onTestStart (Lorg/testng/ITestResult;)V 95 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7290400
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeContainerUpdate (Lio/qameta/allure/model/TestResultContainer;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb7290c90
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg addChildToContainer (Ljava/lang/String;Ljava/lang/String;)V 27 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7290a48
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onTestStart (Lorg/testng/ITestResult;)V 83 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7290800
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onTestStart (Lorg/testng/ITestResult;)V 73 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7291d98
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg onTestStart (Lorg/testng/ITestResult;)V 65 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7291b48
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier afterTestStart (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb7291908
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeTestStart (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb72916c8
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier afterTestSchedule (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb7291488
+instanceKlass  @bci io/qameta/allure/listener/LifecycleNotifier beforeTestSchedule (Lio/qameta/allure/model/TestResult;)V 5 <appendix> argL0 ; # io/qameta/allure/listener/LifecycleNotifier$$Lambda+0x000001eeb7291248
+instanceKlass  @bci io/qameta/allure/AllureLifecycle scheduleTestCase (Ljava/lang/String;Lio/qameta/allure/model/TestResult;)V 10 <appendix> member <vmtarget> ; # io/qameta/allure/AllureLifecycle$$Lambda+0x000001eeb7291000
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg startTestCase (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;Lorg/testng/IClass;[Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V 295 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7293d98
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg startTestCase (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;Lorg/testng/IClass;[Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V 283 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7293b50
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLinks (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 54 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7293908
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLinks (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 40 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72936b8
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLinks (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 27 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7293470
+instanceKlass io/qameta/allure/LinkAnnotations
+instanceKlass  @bci io/qameta/allure/util/AnnotationUtils getLinks (Ljava/util/Collection;)Ljava/util/Set; 2 <appendix> argL0 ; # io/qameta/allure/util/AnnotationUtils$$Lambda+0x000001eeb7293028
+instanceKlass io/qameta/allure/LinkAnnotation
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLinks (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 13 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292dd8
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg isMuted (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Z 32 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292b88
+instanceKlass io/qameta/allure/Muted
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg isMuted (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Z 5 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292938
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg isFlaky (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Z 32 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72926e8
+instanceKlass io/qameta/allure/Flaky
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg isFlaky (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Z 5 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292498
+instanceKlass java/math/MutableBigInteger
+instanceKlass sun/security/provider/ByteArrayAccess$LE
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getHistoryId (Lorg/testng/ITestNGMethod;Ljava/util/List;)Ljava/lang/String; 79 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292250
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getHistoryId (Lorg/testng/ITestNGMethod;Ljava/util/List;)Ljava/lang/String; 63 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7292000
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getHistoryId (Lorg/testng/ITestNGMethod;Ljava/util/List;)Ljava/lang/String; 55 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7297cf8
+instanceKlass io/qameta/allure/model/TestResult
+instanceKlass io/qameta/allure/util/ObjectUtils
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getParameters (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;[Ljava/lang/Object;)Ljava/util/List; 97 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72974b0
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg lambda$getParameters$26 ([Ljava/lang/Object;Ljava/util/Map;Ljava/lang/reflect/Method;)V 63 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7297280
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg lambda$getParameters$26 ([Ljava/lang/Object;Ljava/util/Map;Ljava/lang/reflect/Method;)V 53 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7297030
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg lambda$getParameters$26 ([Ljava/lang/Object;Ljava/util/Map;Ljava/lang/reflect/Method;)V 26 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7296de0
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getParameters (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;[Ljava/lang/Object;)Ljava/util/List; 77 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7296b98
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getParameters (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;[Ljava/lang/Object;)Ljava/util/List; 59 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7296950
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getParameters (Lorg/testng/ITestContext;Lorg/testng/ITestNGMethod;[Ljava/lang/Object;)Ljava/util/List; 45 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72966f0
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLabels (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 118 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb72964a8
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLabels (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 104 <appendix> argL0 ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7296258
+instanceKlass  @bci io/qameta/allure/testng/AllureTestNg getLabels (Lorg/testng/ITestNGMethod;Lorg/testng/IClass;)Ljava/util/List; 90 <appendix> member <vmtarget> ; # io/qameta/allure/testng/AllureTestNg$$Lambda+0x000001eeb7296000

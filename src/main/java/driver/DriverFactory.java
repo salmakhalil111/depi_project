@@ -119,6 +119,45 @@ public class DriverFactory {
         return setDriver(browser, headless);
     }
 
+    private static WebDriver setDriver(String browser, String headless) {
+        WebDriver driver;
+
+        boolean isHeadless = headless.equalsIgnoreCase("true");
+
+        switch (browser.toLowerCase()) {
+            case "chrome" -> {
+                ChromeOptions chromeOptions = new ChromeOptions();
+                if (isHeadless) {
+                    chromeOptions.addArguments("--headless=new");
+                }
+                driver = new ChromeDriver(chromeOptions);
+                System.out.println("Chrome browser launched successfully.");
+            }
+            case "edge" -> {
+                EdgeOptions edgeOptions = new EdgeOptions();
+                if (isHeadless) {
+                    edgeOptions.addArguments("--headless=new");
+                }
+                driver = new EdgeDriver(edgeOptions);
+                System.out.println("Edge browser launched successfully.");
+            }
+            case "firefox" -> {
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (isHeadless) {
+                    firefoxOptions.addArguments("--headless");
+                }
+                driver = new FirefoxDriver(firefoxOptions);
+                System.out.println("Firefox browser launched successfully.");
+            }
+            default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
+        }
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        return driver;
+    }
+
     public static void quitDriver(WebDriver driver)
     {
         driver.quit();
