@@ -15,9 +15,9 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatUserAddProductsToCart() {
         // Test implementation
-        homePage = new HomePage(driver);
-        cartPage = new CartPage(driver);
-        productListingPage = new ProductListingPage(driver);
+        homePage = new HomePage(getDriver());
+        cartPage = new CartPage(getDriver());
+        productListingPage = new ProductListingPage(getDriver());
         homePage.navigate();
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
@@ -30,8 +30,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateTheUserDeleteProductsFromCart() {        // Test implementation
 
-        cartPage= new CartPage(driver);
-        productListingPage= new ProductListingPage(driver);
+        cartPage= new CartPage(getDriver());
+        productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addProductsToCart();
@@ -44,10 +44,10 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatUserAddProductsWhenLoggedIn() {
         // Test implementation
-        homePage = new HomePage(driver);
-        signupLoginPage = new SignUpLoginPage(driver);
-        cartPage = new CartPage(driver);
-        productListingPage = new ProductListingPage(driver);
+        homePage = new HomePage(getDriver());
+        signupLoginPage = new SignUpLoginPage(getDriver());
+        cartPage = new CartPage(getDriver());
+        productListingPage = new ProductListingPage(getDriver());
         homePage.navigate();
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
@@ -65,8 +65,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateUserUpdateProductQuantityFromCart() {
         // Test implementation
-        cartPage= new CartPage(driver);
-        productListingPage= new ProductListingPage(driver);
+        cartPage= new CartPage(getDriver());
+        productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         //productListingPage.addProductToCart(1);
@@ -78,8 +78,8 @@ public class CartTest extends BaseTest {
     @Test
     public void validateThatQuantityIs1WhenAddingFromProductListingPage() {
         // Test implementation
-        cartPage= new CartPage(driver);
-        productListingPage= new ProductListingPage(driver);
+        cartPage= new CartPage(getDriver());
+        productListingPage= new ProductListingPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.addBlueTopProductToCart();
@@ -92,8 +92,8 @@ public class CartTest extends BaseTest {
 
     @Test
     public void validateThatUserCanAddProductsToCartFromProductDetailsPage() {
-        cartPage= new CartPage(driver);
-        productListingPage= new ProductListingPage(driver);
+        cartPage= new CartPage(getDriver());
+        productListingPage= new ProductListingPage(getDriver());
         blueTopDetailsPage = new BlueTopDetailsPage(driver);
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
