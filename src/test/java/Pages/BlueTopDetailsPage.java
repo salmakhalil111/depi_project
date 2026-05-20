@@ -1,7 +1,7 @@
 package Pages;
 
 import Tests.BaseTest;
-import Utils.ElementActions;
+import utils.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
