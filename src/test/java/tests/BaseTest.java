@@ -1,7 +1,7 @@
-package tests;
+package Tests;
 
-import driver.DriverFactory;
-import utils.ScreenShotHandler;
+import Driver.DriverFactory;
+import Utils.ScreenShot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -9,25 +9,30 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-
 public class BaseTest {
 
-    public WebDriver driver ;
+
+    public WebDriver driver;
 
     @Parameters({"browser" , "headless"})
     @BeforeMethod
-    public void preconditions(@Optional("edge") String browserName , @Optional("true") String headless)
-    {
-        driver = DriverFactory.setDriver(browserName , headless);
+    public void Preconditions(@Optional("edge") String browserName , @Optional("true") String headless ) {
+        driver = DriverFactory.initDriver(browserName , headless);
     }
 
     @AfterMethod
     public void tearDown(ITestResult result)
     {
-        if(result.getStatus() == ITestResult.FAILURE)
+        if (result.getStatus() == ITestResult.FAILURE)
         {
-            ScreenShotHandler.takeScreenshot(driver , result.getName());
+            System.out.println("Test Case Failed !!!");
+            ScreenShot.takeScreenshot(driver , result.getName());
         }
         DriverFactory.quitDriver(driver);
     }
+
+
+
+
+
 }
