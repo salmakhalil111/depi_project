@@ -7,7 +7,7 @@ import pages.HomePage;
 import pages.ProductsPage;
 
 // Feature 1: Product Browsing (Guest user)
-public class ProductBrowsingTests extends BaseTestTwo {
+public class ProductBrowsingTests extends BaseTest {
 
     // TC01: Go to Products page from home navbar
     @Test(priority = 1)
