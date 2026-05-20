@@ -11,7 +11,7 @@ public class ProductFilterTests extends BaseTest {
     // TC01: Category sidebar is visible on products page
     @Test(priority = 1)
     public void categorySidebarVisible() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         Assert.assertTrue(products.isCategorySidebarVisible(),
                 "Category sidebar should be visible");
@@ -20,7 +20,7 @@ public class ProductFilterTests extends BaseTest {
     // TC02: Click on "Women" category expands the list (sub-category appears clickable)
     @Test(priority = 2)
     public void filterByWomenDressSubCategory() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         products.openWomenSubCategory("Dress");
         String title = products.getCategoryTitle().toLowerCase();
@@ -31,7 +31,7 @@ public class ProductFilterTests extends BaseTest {
     // TC03: Filter by Men - Tshirts
     @Test(priority = 3)
     public void filterByMenTshirtsSubCategory() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         products.clickMenCategory();
         org.openqa.selenium.By sub =
@@ -45,7 +45,7 @@ public class ProductFilterTests extends BaseTest {
     // TC04: Brands sidebar is visible
     @Test(priority = 4)
     public void brandsSidebarVisible() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         Assert.assertTrue(products.isBrandsSidebarVisible(),
                 "Brands sidebar should be visible");
@@ -54,7 +54,7 @@ public class ProductFilterTests extends BaseTest {
     // TC05: Filter by brand "Polo"
     @Test(priority = 5)
     public void filterByPoloBrand() {
-        ProductsPage products = new ProductsPage(driver);
+        ProductsPage products = new ProductsPage(getDriver());
         products.open();
         products.clickBrand("Polo");
         String title = products.getBrandResultTitle().toLowerCase();
