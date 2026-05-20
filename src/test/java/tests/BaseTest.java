@@ -1,7 +1,7 @@
 package tests;
 
 import driver.DriverFactory;
-import utils.ScreenShot;
+import utils.ScreenShotUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -26,7 +26,7 @@ public class BaseTest {
         if (result.getStatus() == ITestResult.FAILURE)
         {
             System.out.println("Test Case Failed !!!");
-            ScreenShot.takeScreenshot(driver , result.getName());
+            ScreenShotUtils.takeScreenshot(driver , result.getName());
         }
         DriverFactory.quitDriver(driver);
     }

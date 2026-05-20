@@ -22,11 +22,8 @@ public class SignUpLoginPage {
     //========================================== Locators ============================//
     private final By signupName_input = By.xpath("//input[@data-qa=\"signup-name\"]");
     private final By signupEmail_input = By.xpath("//input[@data-qa=\"signup-email\"]");
-    private final By signupName_input = By.xpath("//input[@data-qa=\"signup-name\"]");
-    private final By signupEmail_input = By.xpath("//input[@data-qa=\"signup-email\"]");
     private final By signup_btn = By.xpath("//button[@data-qa=\"signup-button\"]");
     private final By genderMale_radio = By.id("id_gender1");
-    private final By genderFemale_radio = By.id("id_gender2");
     private final By password_input = By.id("password");
     private final By newsletter_checkbox = By.id("newsletter");
     private final By offers_checkbox = By.id("optin");
@@ -48,8 +45,6 @@ public class SignUpLoginPage {
     private final By signUp_btn = By.xpath("//button[@data-qa=\"signup-button\"]");
     private final By maleGender_rbtn = By.id("id_gender1");
     private final By password_textBox = By.id("password");
-    private final By newsletter_checkbox = By.id("newsletter");
-    private final By offers_checkbox = By.id("optin");
     private final By firstName_textBox = By.id("first_name");
     private final By lastName_textBox = By.id("last_name");
     private final By company_textBox = By.id("company");
@@ -59,9 +54,7 @@ public class SignUpLoginPage {
     private final By city_textBox = By.id("city");
     private final By zipcode_textBox = By.id("zipcode");
     private final By mobileNumber_textBox = By.id("mobile_number");
-    private final By createAccount_btn = By.xpath("//button[@data-qa=\"create-account\"]");
     private final By accountCreated_message = By.xpath("//*[@data-qa=\"account-created\"]");
-    private final By emailExists_errorMessage = By.xpath("//form[@action=\"/signup\"]/p");
     private final By loginEmail_textBox = By.xpath("//input[@data-qa=\"login-email\"]");
     private final By loginPassword_textBox = By.xpath("//input[@data-qa=\"login-password\"]");
     private final By login_btn = By.xpath("//button[@data-qa=\"login-button\"]");
@@ -150,9 +143,6 @@ public void createNewAccount() {
 
     
 
-    public void enterNameAndEmail(String name, String email) {
-        enterSignUpNameAndEmail(name, email);
-    }
 
     public void createAccount(String password) {
         driver.findElement(maleGender_rbtn).click();
@@ -274,17 +264,9 @@ public void createNewAccount() {
         softAssert.assertAll();
     }
 
-    public void assertAccountCreated() {
-        Assert.assertTrue(driver.findElement(accountCreated_message).isDisplayed(), "Account created message should be displayed");
-        Assert.assertEquals(driver.findElement(accountCreated_message).getText(), "ACCOUNT CREATED!", "Account created message text should match");
-    }
 
-    public void assertEmailExistsError() {
-        Assert.assertTrue(driver.findElement(emailExists_errorMessage).isDisplayed(), "Email exists error message is not displayed");
 
-        String errorMessageText = driver.findElement(emailExists_errorMessage).getText();
-        Assert.assertEquals(errorMessageText, emailExistErrorMessage, "Expected message 'Email Address already exist!' but got '" + errorMessageText + "'");
-    }
+
 
     public void assertEmptyFieldMissingErrorMessage()
     {
