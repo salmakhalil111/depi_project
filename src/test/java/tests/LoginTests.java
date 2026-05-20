@@ -1,5 +1,6 @@
 package tests;
 
+import tests.BaseTest;
 import pages.HomePage;
 import pages.SignUpLoginPage;
 import testData.LoginDataProvider;
