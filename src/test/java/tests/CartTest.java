@@ -94,7 +94,7 @@ public class CartTest extends BaseTest {
     public void validateThatUserCanAddProductsToCartFromProductDetailsPage() {
         cartPage= new CartPage(getDriver());
         productListingPage= new ProductListingPage(getDriver());
-        blueTopDetailsPage = new BlueTopDetailsPage(driver);
+        blueTopDetailsPage = new BlueTopDetailsPage(getDriver());
         productListingPage.navigate();
         productListingPage.assertThatUserIsOnProductListingPage();
         productListingPage.clickBlueTopView();
