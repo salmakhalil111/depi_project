@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.ProductsPage;
 
 // Feature 4: Filter products by Category or Brand
-public class ProductFilterTests extends BaseTestTwo {
+public class ProductFilterTests extends BaseTest {
 
     // TC01: Category sidebar is visible on products page
     @Test(priority = 1)
