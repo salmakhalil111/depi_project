@@ -1,5 +1,6 @@
 package Tests;
 
+import tests.BaseTest;
 import pages.HomePage;
 import pages.SignUpLoginPage;
 import com.github.javafaker.Faker;
