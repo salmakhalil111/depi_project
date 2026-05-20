@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
+// Feature 1: Product Browsing (Guest user)
 public class ProductBrowsingTests extends BaseTest {
     HomePage homePage;
     ProductListingPage productListingPage;

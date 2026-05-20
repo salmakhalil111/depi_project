@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Utils.ElementActions;
+import utils.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +12,7 @@ import java.time.Duration;
 public class HomePage {
     //======================================== Variables ==============================//
     private final String url = "https://automationexercise.com/";
-    //======================================== Driver =================================//
+    //======================================== driver =================================//
     private final WebDriver driver;
 
     //======================================== Constructor ===========================//
@@ -67,6 +67,13 @@ public class HomePage {
     }
 
     //======================================== Assertions ===============================//
+    
+      public void assertAtHomePage() {
+        Assert.assertEquals(driver.getCurrentUrl(), url );
+    }
+
+    
+    
     public void assertUserLoggedInSuccessfully() {
         Assert.assertTrue(driver.findElement(logout_btn).isDisplayed(), "Logout button is not displayed - User is not logged in");
     }

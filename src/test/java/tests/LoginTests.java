@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.HomePage;
-import Pages.SignUpLoginPage;
-import TestData.LoginDataProvider;
+import tests.BaseTest;
+import pages.HomePage;
+import pages.SignUpLoginPage;
+import testData.LoginDataProvider;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
@@ -62,5 +63,19 @@ public class LoginTests extends BaseTest{
         homePage.clickSignupLogin();
         signUpLoginPage.login(email , password);
         signUpLoginPage.assertEmptyFieldMissingErrorMessage();
+    }
+
+    @Test
+    @Description("Validatetaht user can logout from his account")
+    public void validateLogout()
+    {
+        homePage = new HomePage(driver);
+        signUpLoginPage = new SignUpLoginPage(driver);
+
+        homePage.navigate();
+        homePage.clickSignupLoginBtn();
+        signUpLoginPage.login("abdo.ayman.ha@gmail.com" , "123456");
+        homePage.clickLogout();
+        signUpLoginPage.assertUserLoggedOut();
     }
 }

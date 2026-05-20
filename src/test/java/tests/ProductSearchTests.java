@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
+// Feature 3: Search products on /products page
 public class ProductSearchTests extends BaseTest {
     ProductListingPage productListingPage;
 

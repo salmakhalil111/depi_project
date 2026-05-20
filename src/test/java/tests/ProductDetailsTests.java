@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
+// Feature 2: Product Details (single product page)
 public class ProductDetailsTests extends BaseTest {
     ProductListingPage productListingPage;
     BlueTopDetailsPage blueTopDetailsPage;

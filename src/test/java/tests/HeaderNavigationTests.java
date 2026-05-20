@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
+// Feature 5: Header navigation (Guest vs Logged-in user)
 public class HeaderNavigationTests extends BaseTest {
     HomePage homePage;
     SignUpLoginPage signupLoginPage;

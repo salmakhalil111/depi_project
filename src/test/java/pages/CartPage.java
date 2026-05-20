@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Utils.ElementActions;
+import utils.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class CartPage {
     // Att.
     private final String URL = "https://automationexercise.com/view_cart";
 
-    // Driver
+    // driver
     WebDriver driver;
     // const.
 

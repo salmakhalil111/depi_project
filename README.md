@@ -26,9 +26,9 @@ Depi_AutomationExercise/
 │   │       └── config.properties        URLs + test credentials (placeholders)
 │   └── test/
 │       └── java/
-│           ├── Base/
+│           ├── base/
 │           │   └── BaseTest.java                  @BeforeMethod / @AfterMethod
-│           └── Tests/
+│           └── tests/
 │               ├── ProductBrowsingTests.java      5 cases
 │               ├── ProductDetailsTests.java       5 cases
 │               ├── ProductSearchTests.java        5 cases

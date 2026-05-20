@@ -1,8 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.annotations.Test;
 
+// Feature 4: Filter products by Category or Brand
 public class ProductFilterTests extends BaseTest {
     ProductListingPage productListingPage;
 
