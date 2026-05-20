@@ -10,10 +10,9 @@ import org.testng.annotations.Test;
 public class RegisterTest extends BaseTest {
 
 
-    HomePage homePage;
-    SignUpLoginPage signUpLoginPage;
-    Faker faker = new Faker();
-    String email;
+
+    Faker faker = new Faker(getDriver());
+
 
 
 
