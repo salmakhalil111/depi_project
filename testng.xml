@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="DEPI Automation Suite" verbose="1">
-    <parameter name="headless" value="true"/>
+<suite name="CrossBrowserSuite" parallel="tests" thread-count="4">
+<parameter name="headless" value="true"/>
 
-    <test name="Product Browsing">
+<!-- Chrome -->
+<test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="headless" value="true"/>
+        <parameter name="executionType" value="remote"/>
+
+         <test name="Product Browsing">
         <classes>
             <class name="tests.ProductBrowsingTests"/>
         </classes>
@@ -43,4 +49,103 @@
         </classes>
     </test>
 
+        
+</test>
+
+<!-- Edge -->
+<test name="EdgeTest">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="true"/>
+        <parameter name="executionType" value="remote"/>
+
+         <test name="Product Browsing">
+        <classes>
+            <class name="tests.ProductBrowsingTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Details">
+        <classes>
+            <class name="tests.ProductDetailsTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Search">
+        <classes>
+            <class name="tests.ProductSearchTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Filter">
+        <classes>
+            <class name="tests.ProductFilterTests"/>
+        </classes>
+    </test>
+
+    <test name="Header Navigation (Guest + Logged-in)">
+        <classes>
+            <class name="tests.HeaderNavigationTests"/>
+        </classes>
+    </test>
+
+    <test name="Login/Register/Cart (Team)">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.CartTest"/>
+            <class name="tests.RegisterTest"/>
+        </classes>
+    </test>
+
+</test>
+
+
+ <!-- Firefox -->
+<test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="headless" value="true"/>
+        <parameter name="executionType" value="remote"/>
+
+         <test name="Product Browsing">
+        <classes>
+            <class name="tests.ProductBrowsingTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Details">
+        <classes>
+            <class name="tests.ProductDetailsTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Search">
+        <classes>
+            <class name="tests.ProductSearchTests"/>
+        </classes>
+    </test>
+
+    <test name="Product Filter">
+        <classes>
+            <class name="tests.ProductFilterTests"/>
+        </classes>
+    </test>
+
+    <test name="Header Navigation (Guest + Logged-in)">
+        <classes>
+            <class name="tests.HeaderNavigationTests"/>
+        </classes>
+    </test>
+
+    <test name="Login/Register/Cart (Team)">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.CartTest"/>
+            <class name="tests.RegisterTest"/>
+        </classes>
+    </test>
+
+       
+</test>
+    
 </suite>
