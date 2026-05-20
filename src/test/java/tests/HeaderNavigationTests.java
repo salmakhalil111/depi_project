@@ -13,7 +13,7 @@ public class HeaderNavigationTests extends BaseTest {
     // TC01: Page title contains "Automation Exercise"
     @Test(priority = 1)
     public void homepageTitleIsCorrect() {
-        HomePage home = new HomePage(driver);
+        HomePage home = new HomePage(getDriver());
         home.open();
         Assert.assertTrue(driver.getTitle().contains("Automation Exercise"),
                 "Page title should contain 'Automation Exercise'");
@@ -22,7 +22,7 @@ public class HeaderNavigationTests extends BaseTest {
     // TC02: As a guest, "Signup / Login" link is visible
     @Test(priority = 2)
     public void guestSeesSignupLoginLink() {
-        HomePage home = new HomePage(driver);
+        HomePage home = new HomePage(getDriver());
         home.open();
         Assert.assertTrue(home.isSignupLoginVisible(),
                 "Guest user should see 'Signup / Login' link");
@@ -33,7 +33,7 @@ public class HeaderNavigationTests extends BaseTest {
     // TC03: All main navbar links are visible for a guest
     @Test(priority = 3)
     public void allNavbarLinksVisibleForGuest() {
-        HomePage home = new HomePage(driver);
+        HomePage home = new HomePage(getDriver());
         home.open();
         Assert.assertTrue(home.isLogoDisplayed(),        "Logo should be visible");
         Assert.assertTrue(home.isProductsLinkVisible(),  "Products link should be visible");
@@ -47,7 +47,7 @@ public class HeaderNavigationTests extends BaseTest {
     // NOTE: This test will fail until real credentials are set in config.properties.
     @Test(priority = 4)
     public void loggedInUserSeesLogoutLink() {
-        HomePage home = new HomePage(driver);
+        HomePage home = new HomePage(getDriver());
         home.open();
         LoginPage login = home.goToLogin();
         Assert.assertTrue(login.isLoginFormVisible(), "Login form should be visible");
@@ -65,7 +65,7 @@ public class HeaderNavigationTests extends BaseTest {
     // TC05: After login, the "Logged in as <username>" banner shows the right name
     @Test(priority = 5)
     public void loggedInUsernameIsShown() {
-        HomePage home = new HomePage(driver);
+        HomePage home = new HomePage(getDriver());
         home.open();
         LoginPage login = home.goToLogin();
 
