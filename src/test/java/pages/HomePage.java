@@ -46,7 +46,7 @@ public class HomePage {
       public void assertAtHomePage() {
         Assert.assertEquals(driver.getCurrentUrl(), url );
     }
-}
+
     
     
     public void assertUserLoggedInSuccessfully() {
