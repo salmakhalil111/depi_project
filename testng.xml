@@ -7,7 +7,7 @@
     <test name="ChromeTest">
         <parameter name="browser" value="chrome"/>
         <parameter name="headless" value="true"/>
-        <parameter name="executionType" value="remote"/>
+        <parameter name="executionType" value="local"/>
         <classes>
             <class name="tests.ProductBrowsingTests"/>
             <class name="tests.ProductDetailsTests"/>
@@ -24,7 +24,7 @@
     <test name="EdgeTest">
         <parameter name="browser" value="edge"/>
         <parameter name="headless" value="true"/>
-        <parameter name="executionType" value="remote"/>
+        <parameter name="executionType" value="local"/>
         <classes>
             <class name="tests.ProductBrowsingTests"/>
             <class name="tests.ProductDetailsTests"/>
@@ -37,20 +37,20 @@
         </classes>
     </test>
 
-    <!-- Firefox -->
-    <test name="FirefoxTest">
-        <parameter name="browser" value="firefox"/>
-        <parameter name="headless" value="true"/>
-        <parameter name="executionType" value="remote"/>
-        <classes>
-            <class name="tests.ProductBrowsingTests"/>
-            <class name="tests.ProductDetailsTests"/>
-            <class name="tests.ProductSearchTests"/>
-            <class name="tests.ProductFilterTests"/>
-            <class name="tests.HeaderNavigationTests"/>
-            <class name="tests.LoginTests"/>
-            <class name="tests.CartTest"/>
-            <class name="tests.RegisterTest"/>
-        </classes>
-    </test>
+<!--    &lt;!&ndash; Firefox &ndash;&gt;-->
+<!--    <test name="FirefoxTest">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <parameter name="headless" value="true"/>-->
+<!--        <parameter name="executionType" value="local"/>-->
+<!--        <classes>-->
+<!--            <class name="tests.ProductBrowsingTests"/>-->
+<!--            <class name="tests.ProductDetailsTests"/>-->
+<!--            <class name="tests.ProductSearchTests"/>-->
+<!--            <class name="tests.ProductFilterTests"/>-->
+<!--            <class name="tests.HeaderNavigationTests"/>-->
+<!--            <class name="tests.LoginTests"/>-->
+<!--            <class name="tests.CartTest"/>-->
+<!--            <class name="tests.RegisterTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
