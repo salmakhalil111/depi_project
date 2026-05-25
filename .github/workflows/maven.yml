@@ -1,47 +1,73 @@
-# This workflow builds a Java 24 project with Maven, executes a parallel TestNG cross-browser suite,
+# This workflow builds a Java 17 project with Maven, executes a parallel TestNG cross-browser suite,
 # captures failure screenshots from the correct path, and generates a visual test report tab.
 
 name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Pull down your code from GitHub
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      # 1. Pull down your code from GitHub
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    # 2. Set up modern Java 24 runtime environment
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      # 2. Set up modern Java 17 runtime environment
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    # Optional: Cache your Maven dependencies to speed up subsequent runs
-    - name: Cache Maven Dependencies
-      uses: actions/cache@v4
-      with:
-        path: ~/.m2
-        key: S({ runner.os ))-maven-${{ hashFiles(' ** /pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven
+      # 3. Cache your Maven dependencies to speed up subsequent runs (Syntax bugs fixed)
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
-    # Step 4 - Run tests
-    - name: Run TestNG tests
-      run: mvn clean test
-      
-      # Step 5 - Upload Extent Report as artifact
-    - name: Upload Test Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: Test-Report
-        path: report/
+      # 4. Run tests with explicit testng.xml matching
+      - name: Run TestNG tests
+        run: mvn clean test -DsuiteXmlFile=testng.xml
+
+      # 5. In Sync with ScreenShotUtils.java: Upload screenshots only if a test fails
+      - name: Upload Error Screenshots on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-failure-screenshots
+          path: screenshots/*.png
+          if-no-files-found: ignore
+
+      # 6. Capture True TestNG HTML Execution Reports (Replaces incorrect "report/" path)
+      - name: Upload TestNG Framework HTML Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testng-html-execution-reports
+          path: target/surefire-reports/
+          if-no-files-found: ignore
+
+      # 7. Capture Allure raw results folder matching your pom.xml setup
+      - name: Upload Raw Allure Results Data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-data
+          path: allure-results/
+          if-no-files-found: ignore
+
+      # 8. Generate the interactive "Tests" summary dashboard tab inside GitHub Actions UI
+      - name: Publish Visual Test Report Tab
+        uses: mikepenz/action-junit-report@v4
+        if: always()
+        with:
+          report_paths: '**/target/surefire-reports/junitreports/TEST-*.xml'
