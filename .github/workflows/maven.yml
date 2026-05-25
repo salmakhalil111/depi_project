@@ -1,5 +1,3 @@
-# Optimized workflow for repository contributors to run TestNG and compile a local Allure Report dashboard artifact.
-
 name: Java 17 Selenium CI with Allure Artifact
 
 on:
@@ -13,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Pull down the repository code
+      # 1. Pull down repository code
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -24,7 +22,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # 3. Cache dependencies to speed up the build pipeline
+      # 3. Cache dependencies to speed up the pipeline
       - name: Cache Maven Dependencies
         uses: actions/cache@v4
         with:
@@ -34,26 +32,21 @@ jobs:
             ${{ runner.os }}-maven-
 
       # 4. Drive execution via TestNG XML
-      # 'continue-on-error: true' guarantees that regardless of e-commerce test site instabilities, the dashboard still compiles!
+      # continue-on-error guarantees that even with automationexercise failures, the workflow keeps going!
       - name: Run TestNG suites
         run: mvn clean test -DsuiteXmlFile=testng.xml
         continue-on-error: true
 
-      # 5. Download the standalone Allure Command Line tool into the runner
-      - name: Install Allure CLI Engine
-        run: |
-          curl -o allure-commandline.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
-          tar -zxvf allure-commandline.tgz
-          sudo mv allure-2.27.0 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-
-      # 6. Compile the raw 'allure-results' JSON data into a standalone HTML website
+      # 5. Use the official marketplace action to automatically hunt down, clean, and compile the report
       - name: Generate Allure Static HTML Report Dashboard
+        uses: simple-elf/allure-report-action@v1.9
         if: always()
-        run: |
-          allure generate allure-results target/allure-results --clean -o allure-report
+        id: allure-report
+        with:
+          allure_results: target/allure-results
+          allure_report: allure-report
 
-      # 7. Package the compiled dashboard folder as a downloadable artifact
+      # 6. Package the compiled dashboard folder as a downloadable artifact
       - name: Upload Finished Allure Report Website
         if: always()
         uses: actions/upload-artifact@v4
@@ -62,7 +55,7 @@ jobs:
           path: allure-report/
           retention-days: 14
 
-      # 8. Keep failure screenshots easily accessible under your build artifacts
+      # 7. Keep failure screenshots accessible under your build artifacts
       - name: Upload Error Screenshots on Failure
         if: failure()
         uses: actions/upload-artifact@v4
