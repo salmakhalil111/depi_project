@@ -1,5 +1,6 @@
-# Reverted back to the original stable command-line approach with a safe fallback copy step.
-name: Java 17 Selenium CI with Allure Dashboard
+# Highly stable command-line testing workflow with a fallback copy step.
+# Updated to leverage Continuous Delivery (CD) to Netlify for contributors.
+name: Java 17 Selenium CI/CD with Allure Dashboard (Netlify)
 
 on:
   push:
@@ -33,7 +34,6 @@ jobs:
             ${{ runner.os }}-maven-
 
       # 4. Drive execution via TestNG XML
-      # continue-on-error ensures that automationexercise instabilities won't crash your whole pipeline.
       - name: Run TestNG tests
         run: mvn clean test -DsuiteXmlFile=testng.xml
         continue-on-error: true
@@ -86,3 +86,18 @@ jobs:
           name: selenium-failure-screenshots
           path: screenshots/*.png
           if-no-files-found: ignore
+
+      # ==========================================
+      # CD PHASE: Deploying the Test Insights Live
+      # ==========================================
+
+      # 9. Deploy the allure-report folder directly to Netlify
+      - name: Deploy Test Dashboard to Netlify
+        if: always() # Ensures live updates happen even if selenium tests find bugs
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: './allure-report'
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.AUTH_SECRET_TOKEN }}
