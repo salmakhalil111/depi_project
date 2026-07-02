@@ -46,3 +46,5 @@ depi_project/
 
 ### Allure results ###
 allure-results/
+.vercel
+.env*

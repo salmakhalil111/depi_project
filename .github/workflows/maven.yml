@@ -1,6 +1,6 @@
 # Highly stable command-line testing workflow with a fallback copy step.
-# Updated to leverage Continuous Delivery (CD) to Netlify for contributors.
-name: Java 17 Selenium CI/CD with Allure Dashboard (Netlify)
+# Updated to leverage Continuous Delivery (CD) to Vercel for unblocked sharing.
+name: Java 17 Selenium CI/CD with Allure Dashboard (Vercel)
 
 on:
   push:
@@ -91,14 +91,12 @@ jobs:
       # CD PHASE: Deploying the Test Insights Live
       # ==========================================
 
-      # 9. Deploy the allure-report folder directly to Netlify
-      - name: Deploy Test Dashboard to Netlify
+      # 9. Deploy the allure-report folder directly to Vercel
+      - name: Deploy Test Dashboard to Vercel
         if: always() # Ensures live updates happen even if selenium tests find bugs
-        uses: nwtgck/actions-netlify@v3
+        uses: amondnet/vercel-action@v25
         with:
-          publish-dir: './allure-report'
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.AUTH_SECRET_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: './allure-report --prod' # Forces a production deployment update
